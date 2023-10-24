@@ -26,7 +26,7 @@ body {
 
 #header-nav {
     width: 100%;
-    padding: 0px 20px 0px;
+    padding: 0px 10px 0px;
 }
 
 #menus {
@@ -36,13 +36,13 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    font-size: 16px; 
+    font-size: 15px; 
 }
 
 #header_etc {
     margin: 0px;
     padding-inline-start: 0px;
-    padding-right: 50px;
+    padding-right: 80px;
     font-size: 14px;
     display: flex;
     flex-direction: row;
@@ -60,10 +60,73 @@ body {
 
 #body > img {
     width: 100%;
+
 }
 
 #footer {
-    background-color: gray;
+    background-color: #333;
     height: 200px;
     width: 100%;
+    display: block;
+}
+
+.footer_inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px 32px;
+    margin: 0px;
+}
+
+.company_info .info_title {
+    font-weight: 800;
+    padding-left: 0px;
+    font-size: 15px;
+    padding-bottom: 10px;
+    border: 0px;
+}
+
+.company_info .bar_none {
+    padding-left: 0px;
+    border: 0px;
+}
+
+.company_info span {
+    display: inline-block;
+    font-size: 13px;
+    color: #9a9a9a;  
+    margin: 6px 0px;
+    padding: 0px 11px 0px 16px;
+    line-height: 10px;
+    border-left: 1px solid #555;
+}
+
+.customer_service .cs_title{
+    font-weight: 800;
+    padding-left: 0px;
+    font-size: 15px;
+    padding-bottom: 10px;
+    border: 0px;
+}
+
+.customer_service span {
+    display: inline-block;
+    font-size: 13px;
+    color: #9a9a9a;  
+    margin: 6px 0px;
+    padding: 0px 11px 0px 16px;
+    line-height: 10px;
+    border-left: 1px solid #555;
+}
+
+.customer_service .ph_num{
+    padding-left: 0px;
+    font-size: 15px;
+    border: 0px;
+}
+
+.customer_service .bar_none{
+    padding-left: 0px;
+    border: 0px;
 }
