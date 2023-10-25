@@ -37,34 +37,7 @@
                             <h2>SUIT</h2>
                         </div>
                         <div class="prod_list">
-                            <div class="product_card">
-                                <div class="product_img"><img src="/images/products/suit/suit_1.png"></div>
-                                <div class="product_info">
-                                    <span class="product_title">네이비 단색 울 수트자켓</span>
-                                    <span class="product_price">￦560,000</span>
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="product_img"><img src="/images/products/suit/suit_2.png"></div>
-                                <div class="product_info">
-                                    <span class="product_title">블랙 단색 울 수트자켓</span>
-                                    <span class="product_price">￦520,000</span>
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="product_img"><img src="/images/products/suit/suit_3.png"></div>
-                                <div class="product_info">
-                                    <span class="product_title">그레이 캐쥬얼 단색 울 수트자켓</span>
-                                    <span class="product_price">￦490,000</span>
-                                </div>
-                            </div>
-                            <div class="product_card">
-                                <div class="product_img"><img src="/images/products/suit/suit_4.png"></div>
-                                <div class="product_info">
-                                    <span class="product_title">브라운 체크 단색 울 수트자켓</span>
-                                    <span class="product_price">￦720,000</span>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -101,4 +74,35 @@
             </div>
         </footer>
     </body>
+    <script>
+        var suits = [{
+            name: '네이비 단색 울 수트자켓',
+            price: 560000,
+            imageUrl: '/images/products/suit/suit_1.png'
+        }, {
+            name: '블랙 단색 울 수트자켓',
+            price: 520000,
+            imageUrl: '/images/products/suit/suit_2.png' 
+        }, {
+            name: '그레이 캐쥬얼 단색 울 수트자켓',
+            price: 490000,
+            imageUrl: '/images/products/suit/suit_3.png', 
+        }, {
+            name: '브라운 체크 단색 울 수트자켓',
+            price: 720000,
+            imageUrl: '/images/products/suit/suit_4.png', 
+        }];
+
+        let productHtml = ''
+        for(var i = 0; i < suits.length; i++) {
+            productHtml = productHtml + '<div class="product_card">'
+                            +'<div class="product_img"><img src="' + suits[i].imageUrl + '"></div>'
+                            +'<div class="product_info">'
+                                +'<span class="product_title">' + suits[i].name + '</span>'
+                                +'<span class="product_price">￦' + suits[i].price + '</span>'
+                            +'</div>'
+                        +'</div>';
+        }
+        document.querySelector(".prod_list").innerHTML = productHtml;
+    </script>
 </html>
