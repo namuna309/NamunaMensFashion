@@ -2,6 +2,7 @@
     <head>
         <title>나뮤나's 남성 패션 브랜드</title>
         <link rel="stylesheet" href="product.css">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
         <header id="header">
@@ -36,9 +37,7 @@
                         <div class="product_title">
                             <h2>SUIT</h2>
                         </div>
-                        <div class="prod_list">
-                            
-                        </div>
+                        <div class="prod_list"></div>
                     </div>
                 </div>
             </div>
@@ -75,34 +74,30 @@
         </footer>
     </body>
     <script>
-        var suits = [{
-            name: '네이비 단색 울 수트자켓',
-            price: 560000,
-            imageUrl: '/images/products/suit/suit_1.png'
-        }, {
-            name: '블랙 단색 울 수트자켓',
-            price: 520000,
-            imageUrl: '/images/products/suit/suit_2.png' 
-        }, {
-            name: '그레이 캐쥬얼 단색 울 수트자켓',
-            price: 490000,
-            imageUrl: '/images/products/suit/suit_3.png', 
-        }, {
-            name: '브라운 체크 단색 울 수트자켓',
-            price: 720000,
-            imageUrl: '/images/products/suit/suit_4.png', 
-        }];
+        
+        axios
+        .get('Mock Server Url')
+        .then(function(res) {
+            const suits = res.data.suits;
 
-        let productHtml = ''
-        for(var i = 0; i < suits.length; i++) {
-            productHtml = productHtml + '<div class="product_card">'
-                            +'<div class="product_img"><img src="' + suits[i].imageUrl + '"></div>'
-                            +'<div class="product_info">'
-                                +'<span class="product_title">' + suits[i].name + '</span>'
-                                +'<span class="product_price">￦' + suits[i].price + '</span>'
-                            +'</div>'
-                        +'</div>';
-        }
-        document.querySelector(".prod_list").innerHTML = productHtml;
+            console.log(suits);
+
+            let productHtml = "";
+            for(var i = 0; i < suits.length; i++) {
+                productHtml = productHtml + '<div class="product_card">'
+                                +'<div class="product_img"><img src="' + suits[i].imageUrl + '"></div>'
+                                +'<div class="product_info">'
+                                    +'<span class="product_title">' + suits[i].name + '</span>'
+                                    +'<span class="product_price">￦' + suits[i].price + '</span>'
+                                +'</div>'
+                            +'</div>';
+            }
+            document.querySelector(".prod_list").insertAdjacentHTML('afterbegin', productHtml);
+
+        })
+        .catch(function(err) {
+            console.log('에러발생');
+            console.log(err);
+        })        
     </script>
 </html>
