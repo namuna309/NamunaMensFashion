@@ -1,18 +1,20 @@
 <html>
     <head>
         <title>나뮤나's 남성 패션 브랜드</title>
-        <link rel="stylesheet" href="product.css">
+        <link rel="stylesheet" href="./product.css">
+        <link rel="stylesheet" href="./header.css">
+        <link rel="stylesheet" href="./footer.css">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
         <header id="header">
             <div class="header_inner">
                 <div id="logo">
-                    <img src="images/icon/logo.png">
+                    <a href="./index.html"><img src="images/icon/logo.png"></a>
                 </div>
                 <nav id="header-nav">
                     <ul id="menus">
-                        <li>SUIT</li>
+                        <li><a href="./product.html">SUIT</a></li>
                         <li>JACKET</li>
                         <li>TOP</li>
                         <li>PANTS</li>
@@ -21,9 +23,9 @@
                     </ul>
                 </nav>
                 <div id = "header_etc">
-                    <div id="login">LOGIN</div>
-                    <div id="join">JOIN</div>
-                    <div id="bucket">CART</div>
+                    <div id="login"><a href="./login.html">LOGIN</a></div>
+                    <div id="join"><a href="./join.html">JOIN</a></div>
+                    <div id="bucket"><a href="./cart.html">CART</a></div>
                 </div>
             </div>
         </header>
@@ -73,31 +75,5 @@
             </div>
         </footer>
     </body>
-    <script>
-        
-        axios
-        .get('Mock Server Url')
-        .then(function(res) {
-            const suits = res.data.suits;
-
-            console.log(suits);
-
-            let productHtml = "";
-            for(var i = 0; i < suits.length; i++) {
-                productHtml = productHtml + '<div class="product_card">'
-                                +'<div class="product_img"><img src="' + suits[i].imageUrl + '"></div>'
-                                +'<div class="product_info">'
-                                    +'<span class="product_title">' + suits[i].name + '</span>'
-                                    +'<span class="product_price">￦' + suits[i].price + '</span>'
-                                +'</div>'
-                            +'</div>';
-            }
-            document.querySelector(".prod_list").insertAdjacentHTML('afterbegin', productHtml);
-
-        })
-        .catch(function(err) {
-            console.log('에러발생');
-            console.log(err);
-        })        
-    </script>
+    <script src="./product.js"></script>
 </html>

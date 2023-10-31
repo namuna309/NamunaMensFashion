@@ -1,0 +1,70 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+
+#header {
+    height: 155px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.header_inner {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-family: 'Nunito Sans','Noto Sans KR','Nanum Gothic';
+    font-weight: 800;
+}
+
+#logo {
+    align-items: center;
+    padding-left: 40px
+}
+
+a > img {
+    height: 160px;
+}
+
+#header-nav {
+    width: 100%;
+    padding: 0px 10px 0px;
+}
+
+#menus {
+    list-style: none;
+    margin: 0px;
+    padding-inline-start: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 15px; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#header_etc {
+    margin: 0px;
+    padding-inline-start: 0px;
+    padding-right: 80px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#header_etc > #join {
+    padding: 0 20px 0;
+}

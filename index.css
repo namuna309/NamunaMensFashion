@@ -3,143 +3,67 @@ body {
     padding: 0px;
 }
 
-#header {
-    height: 155px;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-.header_inner {
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    font-family: 'Nunito Sans','Noto Sans KR','Nanum Gothic';
-    font-weight: 800;
-}
-
-#logo {
-    align-items: center;
-    padding-left: 40px
-}
-
-#logo > img {
-    height: 160px;
-}
-
-#header-nav {
-    width: 100%;
-    padding: 0px 10px 0px;
-}
-
-#menus {
-    list-style: none;
-    margin: 0px;
-    padding-inline-start: 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-size: 15px; 
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-#header_etc {
-    margin: 0px;
-    padding-inline-start: 0px;
-    padding-right: 80px;
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#header_etc > #join {
-    padding: 0 20px 0;
-}
-
 #body {
     width: 100%;
 }
 
-#body > img {
-    width: 100%;
-
-}
-
-#footer {
-    background-color: #333;
-    height: 200px;
-    width: 100%;
-    display: block;
-}
-
-.footer_inner {
+.slide {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    overflow: hidden;
+
+    position: relative;
+    width: 100%;
+}
+
+.slide_item {
+    width: 100%;
+    display: flex;
     align-items: center;
-    padding: 40px 40px 32px;
-    margin: 0px;
+    justify-content: center;
+
+    position: relative;
+    left: 0px;
+
+    flex-shrink: 0;
+
+    transition: left 0.5s;
 }
 
-.company_info .info_title {
-    font-weight: 800;
-    padding-left: 0px;
-    font-size: 15px;
-    padding-bottom: 10px;
-    border: 0px;
+.slide_item > img {
+    
+    width: 100%;
 }
 
-.company_info .bar_none {
-    padding-left: 0px;
-    border: 0px;
+/* 페이지네이션 스타일 */
+.slide > ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.slide_pagination {
+  /* layout */
+  display: flex;
+  gap: 10px;
+
+  /* position */
+  position: absolute;
+  bottom: 0;
+  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide_pagination > li {
+  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  color: #ffffff;
+  opacity: 0.25;
+  cursor: pointer;
+  font-size: 35px;
+}
+.slide_pagination > li.active {
+  /* 현재 슬라이드 색상은 투명도 없이 */
+  color: #ffffff;
+  opacity: 0.75;
 }
 
-.company_info span {
-    display: inline-block;
-    font-size: 13px;
-    color: #9a9a9a;  
-    margin: 6px 0px;
-    padding: 0px 11px 0px 16px;
-    line-height: 10px;
-    border-left: 1px solid #555;
-}
-
-.customer_service .cs_title{
-    font-weight: 800;
-    padding-left: 0px;
-    font-size: 15px;
-    padding-bottom: 10px;
-    border: 0px;
-}
-
-.customer_service span {
-    display: inline-block;
-    font-size: 13px;
-    color: #9a9a9a;  
-    margin: 6px 0px;
-    padding: 0px 11px 0px 16px;
-    line-height: 10px;
-    border-left: 1px solid #555;
-}
-
-.customer_service .ph_num{
-    padding-left: 0px;
-    font-size: 15px;
-    border: 0px;
-}
-
-.customer_service .bar_none{
-    padding-left: 0px;
-    border: 0px;
-}
