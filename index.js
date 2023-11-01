@@ -34,10 +34,10 @@ endSlide.classList.forEach((c) => endElem.classList.add(c));
 endElem.innerHTML = endSlide.innerHTML;
 startSlide.classList.forEach((c) => startElem.classList.add(c));
 startElem.innerHTML = startSlide.innerHTML;
-
 // 각 복제한 엘리먼트를 각 위치에 추가하기
 slideItems[0].before(endElem);
 slideItems[slideItems.length - 1].after(startElem);
+console.log(slideItems);
 
 // 슬라이드 전체를 선택해 값을 변경해주기 위해 슬라이드 전체 선택하기
 slideItems = document.querySelectorAll(".slide_item");
@@ -77,41 +77,6 @@ function nextMove() {
       });
     }, 0);
     // // 슬라이드 이동 시 현재 활성화된 pagination 변경
-    paginationItems.forEach((i) => i.classList.remove("active"));
-    paginationItems[currSlide - 1].classList.add("active");
-  }
-}
-function prevMove() {
-  currSlide--;
-  // 1번째 슬라이드 이하로 넘어가지 않게 하기 위해서
-  if (currSlide > 0) {
-    // 슬라이드를 이동시키기 위한 offset 계산
-    const offset = slideWidth * currSlide;
-    // 각 슬라이드 아이템의 left에 offset 적용
-    slideItems.forEach((i) => {
-      i.setAttribute("style", `left: ${-offset}px`);
-    });
-    // 슬라이드 이동 시 현재 활성화된 pagination 변경
-    paginationItems.forEach((i) => i.classList.remove("active"));
-    paginationItems[currSlide - 1].classList.add("active");
-  } else {
-    // 무한 슬라이드 기능 - currSlide 값만 변경해줘도 되지만 시각적으로 자연스럽게 하기 위해 아래 코드 작성
-    currSlide = maxSlide + 1;
-    let offset = slideWidth * currSlide;
-    // 각 슬라이드 아이템의 left에 offset 적용
-    slideItems.forEach((i) => {
-      i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
-    });
-    currSlide--;
-    offset = slideWidth * currSlide;
-    setTimeout(() => {
-      // 각 슬라이드 아이템의 left에 offset 적용
-      slideItems.forEach((i) => {
-        // i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
-        i.setAttribute("style", `transition: ${0.15}s; left: ${-offset}px`);
-      });
-    }, 0);
-    // 슬라이드 이동 시 현재 활성화된 pagination 변경
     paginationItems.forEach((i) => i.classList.remove("active"));
     paginationItems[currSlide - 1].classList.add("active");
   }
