@@ -1,91 +1,85 @@
+body, section, div, img, p {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body {
-    margin: 0px;
     padding: 0px;
 }
 
-#body {
+section {
     width: 100%;
     height: auto;
-    margin: 0px;
     padding: 0px;
 }
-.body_inner .banner_suit{
+
+/* banner */
+.body_inner, .banner_suit, .banner_suit img{
     display: block;
     width: 100%;
-    margin: 0px;
     padding: 0px;
 }
 
-.banner_suit > img {
-    width: 100%;
-}
-
+/* products */
 .products {
     width: 100%;
-    margin: 0px;
-    padding: 0px 0px 100px;
+    padding: 0px 242px 100px;
 }
 
 .product_list_box {
-    margin: 0px 40px;
-    padding: 0px;
+    width: 100%;
+    padding: 0;
 }
 
+
+/* Title */
 h2{
     padding: 70px 0px;
-    margin: 0 auto;
-    width: 1200px;
+    width: 100%;
     font-size: 45px;
     font-weight: 700;
-    font-family: "Nunito Sans", "Noto Sans KR", "Nanum Gothic";
-    line-height: 56px;
+    font-family: "Nunito Sans";
     text-align: center;
     border-bottom: 1.5px solid #1d1d1d;
 }
 
+/* product list */
 .prod_list {
     padding-top: 70px;
-    margin: 0 auto;
-    width: 1200px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
 
+/* product one */
 .product_card {
     width: 280px;
-    height: auto;
-    /* background-color: gray; */
 }
+/*product image */
 .product_img {
     padding: 0px;
-    margin: 0px;
-    width: 280px;
-    height: 336px;
-
-}
-
-.product_img > img {
-    padding: 0px;
-    margin: 0px;
     width: 100%;
 }
 
+.product_img img {
+    padding: 0px;
+    width: 100%;
+}
+
+/*product info -> name, price */
 .product_info {
-    display: block;
-    padding: 10px;
-    
+    width: 100%;
+    padding: 10px;    
 }
 
 .product_info span {
     display: block;
-    height: 16px;
     font-size: 16px;
     font-weight: 300;
     color: #1d1d1d;
-    font-family: "Nunito Sans", "Noto Sans KR";
-    line-height: 14px;
+    font-family: "Nunito Sans";
+    line-height: 16px;
 }
 
 .product_info .product_price {

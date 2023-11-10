@@ -6,14 +6,14 @@
         <link rel="stylesheet" href="./footer.css">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
-    <body>
+    <body style="margin: 0px;padding: 0px;">
         <header id="header">
             <div class="header_inner">
-                <div id="logo">
+                <div class="logo">
                     <a href="./index.html"><img src="images/icon/logo.png"></a>
                 </div>
-                <nav id="header-nav">
-                    <ul id="menus">
+                <nav class="header-nav">
+                    <ul class="menus">
                         <li><a href="./product.html">SUIT</a></li>
                         <li>JACKET</li>
                         <li>TOP</li>
@@ -22,10 +22,12 @@
                         <li>ACCESORY</li>
                     </ul>
                 </nav>
-                <div id = "header_etc">
-                    <div id="login"><a href="./login.html">LOGIN</a></div>
-                    <div id="join"><a href="./join.html">JOIN</a></div>
-                    <div id="bucket"><a href="./cart.html">CART</a></div>
+                <div class = "header_etc">
+                    <ul class="etc">
+                        <li><a href="./login.html">LOGIN</a></li>
+                        <li><a href="./join.html">JOIN</a></li>
+                        <li><a href="./cart.html">CART</a></li>
+                    </ul>
                 </div>
             </div>
         </header>
@@ -47,30 +49,37 @@
         <footer id="footer">
             <div class="footer_inner">
                 <div class="company_info">
-                    <span class="info_title">COMPANY INFO</span>
-                    <br>
-                    <span class="bar_none">사업자 등록번호 : 211-87-87724</span>
-                    <span>통신판매업신고 : 제 2010-서울강남-00066호</span>
-                    <br>
-                    <span class="bar_none">대표전화 : 1544-5114</span>
-                    <span>(유료)팩스 : 031-360-0003</span>
-                    <br>
-                    <span class="bar_none">서울 강남구 언주로 870</span>
-                    <span>(주)LF</span>
-                    <span>대표이사 오규식, 패션사업부문장 김상균</span>
-                    <br>
-                    <span class="bar_none">COPYRIGHT © 2021 DAKS ALL RIGHTS RESERVED.</span>
+                    <p class="title">COMPANY INFO</p>
+                    <div>
+                        <span>사업자 등록번호 : 211-87-87724</span>
+                        <span class="bar">통신판매업신고 : 제 2010-서울강남-00066호</span>
+                    </div>
+                    <div>
+                        <span>대표전화 : 1544-5114</span>
+                        <span class="bar">(유료)팩스 : 031-360-0003</span>
+                    </div>
+                    <div>
+                        <span>서울 강남구 언주로 870</span>
+                        <span class="bar">(주)LF 대표이사 오규식, 패션사업부문장 김상균</span>
+                    </div>
+                    <div>
+                        <span>COPYRIGHT © 2021 DAKS ALL RIGHTS RESERVED.</span>
+                    </div>
                 </div>
                 <div class = "customer_service">
-                    <span class="cs_title">C/S CENTER</span>
-                    <br>
-                    <span class="ph_num">1544-5114</span>
-                    <br>
-                    <span class="bar_none">MON - FRI AM 10:00 ~ PM 05:00</span>
-                    <br>
-                    <span class="bar_none">LUNCH TIME PM 01:00 ~ PM 02:00</span>
-                    <br>
-                    <span class="bar_none">SAT / SUN / HOLIDAY OFF</span>
+                    <p class="title">C/S CENTER</p>
+                    <div>
+                        <span class="ph_num">1544-5114</span>
+                    </div>
+                    <div>
+                        <span>MON - FRI AM 10:00 ~ PM 05:00</span>
+                    </div>
+                    <div>
+                        <span>LUNCH TIME PM 01:00 ~ PM 02:00</span>
+                    </div>
+                    <div>
+                        <span>SAT / SUN / HOLIDAY OFF</span>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -18,12 +18,7 @@ footer {
     padding: 40px;
 }
 
-.title {
-    font-weight: 800;
-    font-size: 15px;
-    padding-bottom: 13px;
-}
-
+/* COMPANY INFO */
 .company_info {
     float: left;
 }
@@ -37,6 +32,7 @@ footer {
     border-left: 1px solid #555;
 }
 
+/* CUSTOMER SERVICE */
 .customer_service {
     float: right;
 }
@@ -45,6 +41,14 @@ footer {
     font-size: 15px;
 }
 
+/* COMPANY INFO, CUSTOMER SERVICE title */
+.title {
+    font-weight: 800;
+    font-size: 15px;
+    padding-bottom: 13px;
+}
+
+/* COMPANY INFO, CUSTOMER SERVICE contents */
 .company_info div, .customer_service div {
     font-size: 13px;
     padding-bottom: 6px;
