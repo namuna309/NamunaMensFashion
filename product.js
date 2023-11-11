@@ -8,7 +8,7 @@ axios
         let productHtml = "";
         for(var i = 0; i < suits.length; i++) {
             productHtml = productHtml + '<div class="product_card">'
-                            +'<div class="product_img"><img src="' + suits[i].imageUrl + '"></div>'
+                            +'<div class="box"><img class="box" src="' + suits[i].imageUrl + '"></div>'
                             +'<div class="product_info">'
                                 +'<span class="product_title">' + suits[i].name + '</span>'
                                 +'<span class="product_price">￦' + suits[i].price + '</span>'

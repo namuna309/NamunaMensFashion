@@ -7,28 +7,16 @@ body {
     padding: 0px;
 }
 
-section {
+.box {
     width: 100%;
-    height: auto;
     padding: 0px;
 }
 
-/* banner */
-.body_inner, .banner_suit, .banner_suit img{
-    display: block;
-    width: 100%;
-    padding: 0px;
-}
 
 /* products */
 .products {
     width: 100%;
     padding: 0px 242px 100px;
-}
-
-.product_list_box {
-    width: 100%;
-    padding: 0;
 }
 
 
@@ -55,16 +43,6 @@ h2{
 /* product one */
 .product_card {
     width: 280px;
-}
-/*product image */
-.product_img {
-    padding: 0px;
-    width: 100%;
-}
-
-.product_img img {
-    padding: 0px;
-    width: 100%;
 }
 
 /*product info -> name, price */
