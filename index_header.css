@@ -14,7 +14,7 @@ header {
 /* 네비게이션 바 hover 시 배경 및 글자 색깔 변경 */
 header:hover {
     background-color: white;
-    color:black
+    color:black;
 
 }
 

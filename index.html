@@ -30,6 +30,31 @@
                     </ul>
                 </div>
             </div>
+            <script>
+                window.onscroll = function() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        logoBlack();
+                    }
+                    else {
+                        logoWhite();
+                        document.querySelector('header').addEventListener('mouseover', function() {
+                            logoBlack();
+                        });
+                        document.querySelector('header').addEventListener('mouseout', function() {
+                            logoWhite();
+                        });
+                    }
+                }
+
+                function logoWhite() {
+                    document.querySelector('header').style = 'color:white;';
+                    document.querySelector('.logo a').style = 'background: url(/images/icon/logo_w.png);background-size: 100% 100%;background-position: 0 0;';
+                }
+                function logoBlack() {
+                    document.querySelector('header').style = 'background-color: white;color:black;';
+                    document.querySelector('.logo a').style = 'background: url(/images/icon/logo_b.png);background-size: 100% 100%;background-position: 0 0;';
+                }
+            </script>
         </header>
         <section id="body" style="margin: 0; padding: 0;">
             <div class="slide">
