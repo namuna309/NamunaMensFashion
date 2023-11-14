@@ -8,9 +8,9 @@
     </head>
     <body style="margin: 0px;padding: 0px;">
         <header id="header">
-            <div class="header_inner">
+            <div class="header_inner background-font-color">
                 <div class="logo">
-                    <a href="./index.html"></a>
+                    <a class="logo-img" href="./index.html"></a>
                 </div>
                 <nav class="header-nav">
                     <ul class="menus">
@@ -34,6 +34,9 @@
                 window.onscroll = function() {
                     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                         logoBlack();
+                        document.querySelector('header').addEventListener('mouseout', function() {
+                            logoBlack();
+                        });
                     }
                     else {
                         logoWhite();
@@ -47,12 +50,12 @@
                 }
 
                 function logoWhite() {
-                    document.querySelector('header').style = 'color:white;';
-                    document.querySelector('.logo a').style = 'background: url(/images/icon/logo_w.png);background-size: 100% 100%;background-position: 0 0;';
+                    document.querySelector('.background-font-color').style = 'background-color: none;color:white;';
+                    document.querySelector('.logo-img').style = 'background: url(/images/icon/logo_w.png);background-size: 100% 100%;background-position: 0 0;';
                 }
                 function logoBlack() {
-                    document.querySelector('header').style = 'background-color: white;color:black;';
-                    document.querySelector('.logo a').style = 'background: url(/images/icon/logo_b.png);background-size: 100% 100%;background-position: 0 0;';
+                    document.querySelector('.background-font-color').style = 'background-color: white;color:black;';
+                    document.querySelector('.logo-img').style = 'background: url(/images/icon/logo_b.png);background-size: 100% 100%;background-position: 0 0;';
                 }
             </script>
         </header>
