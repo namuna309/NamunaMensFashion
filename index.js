@@ -1,3 +1,4 @@
+// 최상단 화보 캐러셀
 // 슬라이크 전체 크기(width 구하기)
 const slide = document.querySelector(".slide");
 let slideWidth = slide.clientWidth;
@@ -107,5 +108,78 @@ for (let i = 0; i < maxSlide; i++) {
 
 // 기본적으로 슬라이드 루프 시작하기
 let loopInterval = setInterval(() => {
-    nextMove();
-  }, 3000);
+  nextMove();
+}, 3000);
+
+
+
+// 착장 사진 캐러셀
+var onModel_w = $('.onModel').width();
+var onModel_curPic = 0;
+var onModel_maxPicnum = $('.onModel-container img').length;
+
+
+setInterval(() => {
+  onModel_curPic = infiniteCarousel('.onModel-container', onModel_curPic, onModel_maxPicnum, onModel_w);
+}, 2000);
+
+// 옷 사진 캐러셀
+var cloth_w = $('.cloth-box').width();
+cloth_w += parseInt($('.cloth-box').css('margin-right')) * 2;
+var cloth_curPic = 0;
+var cloth_maxPicnum = $('.cloth-container img').length - 2;
+setInterval(() => {
+  cloth_curPic = infiniteCarousel('.cloth-container', cloth_curPic, cloth_maxPicnum, cloth_w)
+
+}, 2000);
+
+
+// 무한 캐러셀 로직
+function infiniteCarousel(box, pic_num, max_pics, box_width) {
+  pic_num++;
+  if (pic_num >= max_pics) {
+    pic_num = 0;
+    $(box).removeClass('trans_smth');
+    $(box).addClass('trans');
+    $(box).css('transform', `translateX(0px)`);
+
+    setTimeout(() => {
+      pic_num = 1;
+      $(box).removeClass('trans');
+      $(box).addClass('trans_smth');
+      $(box).css('transform', `translateX(${(-1) * pic_num * box_width}px)`);
+    }, 0)
+
+  }
+  else {
+    $(box).css('transform', `translateX(${(-1) * pic_num * box_width}px)`);
+  }
+  return pic_num;
+}
+
+window.onscroll = function() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      logoBlack();
+      document.querySelector('header').addEventListener('mouseout', function() {
+          logoBlack();
+      });
+  }
+  else {
+      logoWhite();
+      document.querySelector('header').addEventListener('mouseover', function() {
+          logoBlack();
+      });
+      document.querySelector('header').addEventListener('mouseout', function() {
+          logoWhite();
+      });
+  }
+}
+
+function logoWhite() {
+  document.querySelector('.background-font-color').style = 'background-color: none;color:white;';
+  document.querySelector('.logo-img').style = 'background: url(/images/icon/logo_w.png);background-size: 100% 100%;background-position: 0 0;';
+}
+function logoBlack() {
+  document.querySelector('.background-font-color').style = 'background-color: white;color:black;';
+  document.querySelector('.logo-img').style = 'background: url(/images/icon/logo_b.png);background-size: 100% 100%;background-position: 0 0;';
+}

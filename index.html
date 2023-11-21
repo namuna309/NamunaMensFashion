@@ -1,190 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <head>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <title>나뮤나's 남성 패션 브랜드</title>
         <link rel="stylesheet" href="./index.css">
         <link rel="stylesheet" href="./index_header.css">
         <link rel="stylesheet" href="./footer.css">
     </head>
-    <body style="margin: 0px;padding: 0px;">
-        <header id="header">
-            <div class="header_inner background-font-color">
-                <div class="logo">
-                    <a class="logo-img" href="./index.html"></a>
-                </div>
-                <nav class="header-nav">
-                    <ul class="menus">
-                        <li> <a href="collection.html">Collection</a></li>
-                        <li>About</li>
-                    </ul>
-                </nav>
-            </div>
-            <script>
-                window.onscroll = function() {
-                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                        logoBlack();
-                        document.querySelector('header').addEventListener('mouseout', function() {
-                            logoBlack();
-                        });
-                    }
-                    else {
-                        logoWhite();
-                        document.querySelector('header').addEventListener('mouseover', function() {
-                            logoBlack();
-                        });
-                        document.querySelector('header').addEventListener('mouseout', function() {
-                            logoWhite();
-                        });
-                    }
-                }
 
-                function logoWhite() {
-                    document.querySelector('.background-font-color').style = 'background-color: none;color:white;';
-                    document.querySelector('.logo-img').style = 'background: url(/images/icon/logo_w.png);background-size: 100% 100%;background-position: 0 0;';
-                }
-                function logoBlack() {
-                    document.querySelector('.background-font-color').style = 'background-color: white;color:black;';
-                    document.querySelector('.logo-img').style = 'background: url(/images/icon/logo_b.png);background-size: 100% 100%;background-position: 0 0;';
-                }
-            </script>
-        </header>
-        <section id="body" style="margin: 0; padding: 0;">
-            <div class="slide">
-                <div class="slide_item"><img src="/images/icon/banner1_1.png" alt="배너1"></div>
-                <div class="slide_item"><img src="/images/icon/banner2_1.png" alt="배너2"></div>
-                <div class="slide_item"><img src="/images/icon/banner3_1.png" alt="배너3"></div>
-                <div class="slide_item"><img src="/images/icon/banner4_1.png" alt="배너4"></div>
-                <ul class="slide_pagination"></ul>
+<body style="margin: 0px;padding: 0px;">
+    <header id="header">
+        <div class="header_inner background-font-color">
+            <div class="logo">
+                <a class="logo-img" href="./index.html"></a>
             </div>
-            <div class="thumb-slide-box">
-                <div class="outside"></div>
-                <div class="thumb-slide">
-                    <div class="text"></div>
-                    <div class="clothes">
-                        <div class="clothes-container trans_smth">
-                            <div class="clothes-box"><img src="/images/img1.jpg" alt=""></div>
-                            <div class="clothes-box"><img src="/images/img2.jpg" alt=""></div>
-                            <div class="clothes-box"><img src="/images/img3.jpg" alt=""></div>
-                            <div class="clothes-box"><img src="/images/img4.jpg" alt=""></div>
-                            <div class="clothes-box"><img src="/images/img1.jpg" alt=""></div>
-                        </div>
+            <nav class="header-nav">
+                <ul class="menus">
+                    <li> <a href="collection.html">Collection</a></li>
+                    <li>About</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="body" style="margin: 0; padding: 0;">
+        <div class="slide">
+            <div class="slide_item"><img src="/images/icon/banner1_1.png" alt="배너1"></div>
+            <div class="slide_item"><img src="/images/icon/banner2_1.png" alt="배너2"></div>
+            <div class="slide_item"><img src="/images/icon/banner3_1.png" alt="배너3"></div>
+            <div class="slide_item"><img src="/images/icon/banner4_1.png" alt="배너4"></div>
+            <ul class="slide_pagination"></ul>
+        </div>
+        <div class="thumb-slide-box">
+            <div class="outside"></div>
+            <div class="thumb-slide">
+                <div class="onModel">
+                    <div class="onModel-container trans_smth">
+                        <div class="onModel-box"><img src="/images/img1.jpg" alt=""></div>
+                        <div class="onModel-box"><img src="/images/img2.jpg" alt=""></div>
+                        <div class="onModel-box"><img src="/images/img3.jpg" alt=""></div>
+                        <div class="onModel-box"><img src="/images/img4.jpg" alt=""></div>
+                        <div class="onModel-box"><img src="/images/img1.jpg" alt=""></div>
                     </div>
-                    <script>
-                        var w = $('.clothes').width();
-                        var nowPicture = 0;
-                        var maxPicutre = $('.clothes-container img').length;
-        
-                        
-                        setInterval((e) => {
-                            nowPicture++;
-                            if(nowPicture >= maxPicutre) {
-                                nowPicture = 0;
-                                $('.clothes-container').removeClass('trans_smth');
-                                $('.clothes-container').addClass('trans');
-                                $('.clothes-container').css('transform', `translateX(0px)`);
-                                
-                                setTimeout(() => {
-                                    nowPicture = 1;
-                                    $('.clothes-container').removeClass('trans');
-                                    $('.clothes-container').addClass('trans_smth');
-                                    $('.clothes-container').css('transform', `translateX(${(-1) * nowPicture * w}px)`); 
-                                }, 0)
-                                
-                            }
-                            else {
-                                $('.clothes-container').css('transform', `translateX(${(-1) * nowPicture * w}px)`);    
-                            }
-                            
-                        }, 2000);
-                    </script>
-                    <div class="season">
-                        <class class="season-container trans_smth">
-                            <div class="season-box"><img src="/images/season4.jpg" alt=""></div>
-                            <div class="season-box"><img src="/images/season1.jpg" alt=""></div>
-                            <div class="season-box"><img src="/images/season2.jpg" alt=""></div>
-                            <div class="season-box"><img src="/images/season3.jpg" alt=""></div>
-                            <div class="season-box"><img src="/images/season4.jpg" alt=""></div>
-                            <div class="season-box"><img src="/images/season1.jpg" alt=""></div>
-                            <div class="season-box"><img src="/images/season2.jpg" alt=""></div>
-                        </class>
+                </div>
+                <div class="cloth">
+                    <div class="cloth-container trans_smth">
+                        <div class="cloth-box"><img src="/images/season4.jpg" alt=""></div>
+                        <div class="cloth-box"><img src="/images/season1.jpg" alt=""></div>
+                        <div class="cloth-box"><img src="/images/season2.jpg" alt=""></div>
+                        <div class="cloth-box"><img src="/images/season3.jpg" alt=""></div>
+                        <div class="cloth-box"><img src="/images/season4.jpg" alt=""></div>
+                        <div class="cloth-box"><img src="/images/season1.jpg" alt=""></div>
+                        <div class="cloth-box"><img src="/images/season2.jpg" alt=""></div>
                     </div>
-                    <script>
-                        var sw = $('.season-box').width();
-                        sw += parseInt($('.season-box').css('margin-right')) * 2;
-                        var s_nowPicture = 0;
-                        var s_maxPicutre = $('.clothes-container img').length;
-                        setInterval((e) => {
-                            s_nowPicture++;
-                            if(s_nowPicture >= s_maxPicutre) {
-                                s_nowPicture = 0;
-                                $('.season-container').removeClass('trans_smth');
-                                $('.season-container').addClass('trans');
-                                $('.season-container').css('transform', `translateX(0px)`);
-                                
-                                setTimeout(() => {
-                                    s_nowPicture = 1;
-                                    $('.season-container').removeClass('trans');
-                                    $('.season-container').addClass('trans_smth');
-                                    $('.season-container').css('transform', `translateX(${(-1) * s_nowPicture * sw}px)`); 
-                                }, 1)
-                                
-                            }
-                            else {
-                                $('.season-container').css('transform', `translateX(${(-1) * s_nowPicture * sw}px)`);    
-                            }
-                            
-                        }, 2000);
-                    
-                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="outside"></div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="footer_inner">
+            <div class="company_info">
+                <p class="title">COMPANY INFO</p>
+                <div>
+                    <span>사업자 등록번호 : 211-87-87724</span>
+                    <span class="bar">통신판매업신고 : 제 2010-서울강남-00066호</span>
+                </div>
+                <div>
+                    <span>대표전화 : 1544-5114</span>
+                    <span class="bar">(유료)팩스 : 031-360-0003</span>
+                </div>
+                <div>
+                    <span>서울 강남구 언주로 870</span>
+                    <span class="bar">(주)LF 대표이사 오규식, 패션사업부문장 김상균</span>
+                </div>
+                <div>
+                    <span>COPYRIGHT © 2021 DAKS ALL RIGHTS RESERVED.</span>
+                </div>
+            </div>
+            <div class="customer_service">
+                <p class="title">C/S CENTER</p>
+                <div>
+                    <span class="ph_num">1544-5114</span>
+                </div>
+                <div>
+                    <span>MON - FRI AM 10:00 ~ PM 05:00</span>
+                </div>
+                <div>
+                    <span>LUNCH TIME PM 01:00 ~ PM 02:00</span>
+                </div>
+                <div>
+                    <span>SAT / SUN / HOLIDAY OFF</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src='./index.js'></script>
 
-                    </div>
-                </div>
-                <div class="outside"></div>
-            </div>
-            
-        </section>
-        <footer id="footer">
-            <div class="footer_inner">
-                <div class="company_info">
-                    <p class="title">COMPANY INFO</p>
-                    <div>
-                        <span>사업자 등록번호 : 211-87-87724</span>
-                        <span class="bar">통신판매업신고 : 제 2010-서울강남-00066호</span>
-                    </div>
-                    <div>
-                        <span>대표전화 : 1544-5114</span>
-                        <span class="bar">(유료)팩스 : 031-360-0003</span>
-                    </div>
-                    <div>
-                        <span>서울 강남구 언주로 870</span>
-                        <span class="bar">(주)LF 대표이사 오규식, 패션사업부문장 김상균</span>
-                    </div>
-                    <div>
-                        <span>COPYRIGHT © 2021 DAKS ALL RIGHTS RESERVED.</span>
-                    </div>
-                </div>
-                <div class = "customer_service">
-                    <p class="title">C/S CENTER</p>
-                    <div>
-                        <span class="ph_num">1544-5114</span>
-                    </div>
-                    <div>
-                        <span>MON - FRI AM 10:00 ~ PM 05:00</span>
-                    </div>
-                    <div>
-                        <span>LUNCH TIME PM 01:00 ~ PM 02:00</span>
-                    </div>
-                    <div>
-                        <span>SAT / SUN / HOLIDAY OFF</span>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </body>
-    <script src = './index.js'></script>
 </html>

@@ -81,17 +81,8 @@ section {
   height: 650px;
 }
 
-.text {
-  width: 40%;
-  min-width: 200px;
-  height: 100%;
-  padding-right: 100px;
-  position: absolute;
-  left: 0;
-}
-
 /* 중앙 슬라이드 */
-.clothes {
+.onModel {
   float: left;
     width: 480px;
     height: 100%;
@@ -103,7 +94,7 @@ section {
     z-index: 10;
 }
 
-.clothes-container {
+.onModel-container {
   float: left;
   width: 600%;
   height: 100%;
@@ -117,18 +108,18 @@ section {
   transition: none;
 }
 
-.clothes-box {
+.onModel-box {
   height: 100%;
   width: 480px;
   float: left;
 }
 
-.clothes-box img {
+.onModel-box img {
   width: 100%;
 }
 
 /* 우측 슬라이드 */
-.season {
+.cloth {
   position: absolute;
   left: 0;
   width: 100%;
@@ -136,11 +127,9 @@ section {
   overflow: hidden;
 }
 
-.season-container {
+.cloth-container {
   position: relative;
   left: 0;
-  right: 0;
-  margin: 0 auto;
   float: left;
   height: 100%;
   display: flex;
@@ -148,14 +137,14 @@ section {
 
 }
 
-.season-box {
+.cloth-box {
   float: left;
   width: 480px;
   height: 100%;
   margin: 0 40px;
 }
 
-.season-box img {
+.cloth-box img {
   width: 100%;
   height: 100%;
 }
