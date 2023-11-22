@@ -81,70 +81,53 @@ section {
   height: 650px;
 }
 
-/* 중앙 슬라이드 */
-.onModel {
-  float: left;
-    width: 480px;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto 0;
-    z-index: 10;
-}
-
-.onModel-container {
-  float: left;
-  width: 600%;
-  height: 100%;
-}
-
-.trans_smth {
-  transition: all 0.8s;
-}
-
-.trans {
-  transition: none;
-}
-
-.onModel-box {
-  height: 100%;
-  width: 480px;
-  float: left;
-}
-
-.onModel-box img {
-  width: 100%;
-}
-
-/* 우측 슬라이드 */
-.cloth {
-  position: absolute;
-  left: 0;
-  width: 100%;
+/* 캐러셀 관련 공통 모듈 */
+.box {
   height: 100%;
   overflow: hidden;
+  position: absolute;
 }
 
-.cloth-container {
+.container {
   position: relative;
   left: 0;
   float: left;
   height: 100%;
   display: flex;
   align-items: center;
-
 }
 
-.cloth-box {
+.trans {
+  transition: all 0.8s;
+}
+
+.item {
   float: left;
   width: 480px;
   height: 100%;
+}
+
+
+.item img {
+  width: 100%;
+  height: 100%;
+}
+
+.margin {
   margin: 0 40px;
 }
 
-.cloth-box img {
+/* 착장샷 캐러셀 */
+.onModel {
+  width: 480px;
+  left: 0;
+  right: 0;
+  margin: 0 auto 0;
+  z-index: 10;
+}
+
+/* 옷사진 캐러셀 */
+.cloth {
+  left: 0;
   width: 100%;
-  height: 100%;
 }
