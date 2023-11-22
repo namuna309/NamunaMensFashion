@@ -1,0 +1,128 @@
+section {
+    width: 100%;
+}
+
+/* 슬로건 */
+.slogan {
+  position: relative;
+  height: 850px;
+  width: 100%;
+  background-color: white;
+}
+
+.contents {
+  position: fixed;
+  top: 250px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  height: auto;
+  width: 600px;
+  z-index: 1;
+}
+
+.contents .img {
+  position: relative;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
+  padding: 0;
+}
+
+.contents img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.contents .text {
+  font-family: serif;
+  margin-top: 30px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 230px;
+  justify-content: space-between;
+  font-size: 45px;
+}
+
+.opacity {
+  opacity: 1;
+}
+
+/* 계절에 따른 슬라이드 변형 */
+.thumb-slide-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;  
+  background-color: white;
+}
+
+.thumb-slide-box, .thumb-slide-box * {
+  position: relative;
+  z-index: 2;
+}
+
+.thumb-slide {
+  position: relative;
+  width: 100%;
+  height: 650px;
+}
+
+/* 캐러셀 관련 공통 모듈 */
+.box {
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.container {
+  position: relative;
+  left: 0;
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.trans {
+  transition: all 0.8s;
+}
+
+.item {
+  float: left;
+  width: 480px;
+  height: 100%;
+}
+
+
+.item img {
+  width: 100%;
+  height: 100%;
+}
+
+.margin {
+  margin: 0 40px;
+}
+
+/* 착장샷 캐러셀 */
+.onModel {
+  width: 480px;
+  left: 0;
+  right: 0;
+  margin: 0 auto 0;
+  z-index: 10;
+}
+
+/* 옷사진 캐러셀 */
+.cloth {
+  left: 0;
+  width: 100%;
+  z-index: 9;
+}
