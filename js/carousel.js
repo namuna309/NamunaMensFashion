@@ -3,20 +3,15 @@ var onModel_w = $('.onModel .item').width();
 var onModel_curPic = 0;
 var onModel_maxPicnum = $('.onModel .item img').length;
 
-
-let onModel_carousel = setInterval(() => {
-  onModel_curPic = infiniteCarousel('.onModel .container', onModel_curPic, onModel_maxPicnum, onModel_w);
-}, 2000);
-
 // 옷 사진 캐러셀
 var cloth_w = $('.cloth .item').width();
 cloth_w += parseInt($('.cloth .item').css('margin-right')) * 2;
 var cloth_curPic = 0;
 var cloth_maxPicnum = $('.cloth .item img').length - 2;
 
-let cloth_carousel = setInterval(() => {
+let onModel_carousel = setInterval(() => {
+  onModel_curPic = infiniteCarousel('.onModel .container', onModel_curPic, onModel_maxPicnum, onModel_w);
   cloth_curPic = infiniteCarousel('.cloth .container', cloth_curPic, cloth_maxPicnum, cloth_w)
-
 }, 2000);
 
 
