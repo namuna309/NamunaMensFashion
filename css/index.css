@@ -6,7 +6,7 @@ section {
 .slogan {
   position: relative;
   height: 850px;
-  width: 100%;
+  width: 100vw;
   background-color: white;
 }
 
@@ -82,7 +82,7 @@ section {
   position: absolute;
 }
 
-.container {
+.slide-container {
   position: relative;
   left: 0;
   float: left;
@@ -95,14 +95,14 @@ section {
   transition: all 0.8s;
 }
 
-.item {
+.slide-item {
   float: left;
   width: 480px;
   height: 100%;
 }
 
 
-.item img {
+.slide-item img {
   width: 100%;
   height: 100%;
 }
@@ -125,4 +125,124 @@ section {
   left: 0;
   width: 100%;
   z-index: 9;
+}
+
+/* Introduction */
+.Introduction {
+  position: relative;
+  width: 100%;
+  height: 350vh;
+  z-index: 2;
+  margin-top: 20vh;
+}
+
+.Introduction-container {
+  position: sticky;
+  display: flex;
+  top: 30vh;
+  width: 100%;
+  height: 55vh;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.Introduction-text {
+  position: absolute;
+  width: 500px;
+  height: 130px;
+  padding: 5px;
+  z-index: 3;
+  left: 5vw;
+  letter-spacing: .009em;
+}
+
+.text-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  font-size: 16px;
+  font-weight: 300;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Introduction-text .dark {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.Introduction-img {
+  position: absolute;
+  height: 100%;
+  width: 60vw;
+  right: 1vw;
+  overflow: hidden;
+  background-color: black;
+}
+
+.Introduction-img img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.hide {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.up {
+  top: 0px;
+  transition: all 0.5s ease-out;
+}
+
+.down {
+  top: 50px;
+  transition: all 0.5s ease-out;
+}
+
+/* fashion show video */
+.fashion-show {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  z-index: 2;
+}
+
+.fashion-show-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fashion-show-title {
+  position: relative;
+  width: 80%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fashion-show-container .contact{
+  position: absolute;
+  z-index: 3;
+
+}
+
+.fashion-show-container video {
+  width: 100%;
 }

@@ -3,16 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
 
     <head>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        
         <title>나뮤나's 남성 패션 브랜드</title>
         <link rel="stylesheet" href="./css/index.css">
         <link rel="stylesheet" href="./css/header.css">
         <link rel="stylesheet" href="./css//footer.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     </head>
 
 <body style="margin: 0px;padding: 0px;">
@@ -43,25 +47,58 @@
         <div class="thumb-slide-box">
             <div class="thumb-slide">
                 <div class="box onModel">
-                    <div class="container trans">
-                        <div class="item"><img src="/images/img1.jpg" alt=""></div>
-                        <div class="item"><img src="/images/img2.jpg" alt=""></div>
-                        <div class="item"><img src="/images/img3.jpg" alt=""></div>
-                        <div class="item"><img src="/images/img4.jpg" alt=""></div>
-                        <div class="item"><img src="/images/img1.jpg" alt=""></div>
+                    <div class="slide-container trans">
+                        <div class="slide-item"><img src="/images/img1.jpg" alt=""></div>
+                        <div class="slide-item"><img src="/images/img2.jpg" alt=""></div>
+                        <div class="slide-item"><img src="/images/img3.jpg" alt=""></div>
+                        <div class="slide-item"><img src="/images/img4.jpg" alt=""></div>
+                        <div class="slide-item"><img src="/images/img1.jpg" alt=""></div>
                     </div>
                 </div>
                 <div class="box cloth">
-                    <div class="container trans">
-                        <div class="item margin"><img src="/images/season4.jpg" alt=""></div>
-                        <div class="item margin"><img src="/images/season1.jpg" alt=""></div>
-                        <div class="item margin"><img src="/images/season2.jpg" alt=""></div>
-                        <div class="item margin"><img src="/images/season3.jpg" alt=""></div>
-                        <div class="item margin"><img src="/images/season4.jpg" alt=""></div>
-                        <div class="item margin"><img src="/images/season1.jpg" alt=""></div>
-                        <div class="item margin"><img src="/images/season2.jpg" alt=""></div>
+                    <div class="slide-container trans">
+                        <div class="slide-item margin"><img src="/images/season4.jpg" alt=""></div>
+                        <div class="slide-item margin"><img src="/images/season1.jpg" alt=""></div>
+                        <div class="slide-item margin"><img src="/images/season2.jpg" alt=""></div>
+                        <div class="slide-item margin"><img src="/images/season3.jpg" alt=""></div>
+                        <div class="slide-item margin"><img src="/images/season4.jpg" alt=""></div>
+                        <div class="slide-item margin"><img src="/images/season1.jpg" alt=""></div>
+                        <div class="slide-item margin"><img src="/images/season2.jpg" alt=""></div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="Introduction">
+            <div class="Introduction-container hide">
+                <div class="Introduction-text">
+                    <div class="text-box show">
+                        <div class="text-title title" style="font-size: 24px;"><p>NAMUNA HOMMME FASHION</p></div>
+                        <div class="text-content"><p>NAMUNA는 하이엔드 남성복 브랜드로 아트적이고 컨셉츄얼한 디자인을 클래식한 남성 테일러링에 접목시켜 현대적인 PRET A PORTER 컬렉션을 선보입니다.</p></div>
+                    </div>
+                    <div class="text-box hide">
+                        <div class="text-title title" style="font-size: 24px;"><p>CASUAL AND SPECIAL</p></div>
+                        <div class="text-content"><p>고급스러운 소재와 트렌디한 디테일의 차별화된 스타일로 특별하면서도 시크한 캐주얼룩을 선호합니다
+                        </p></div>
+                    </div>
+                    <div class="text-box hide">
+                        <div class="text-title title" style="font-size: 24px;"><p>ALL AYAWYS FOR MEN</p></div>
+                        <div class="text-content"><p>2020년 FW 런칭 이후 NAMUNA가 전개하는 컬렉션들은 유명 패션 피플과 젊은 남성들 에게 큰 인기를 끌며, 독보적인 남성 캐주얼 브랜드로 자리매김하고 있습니다.
+                        </p></div>
+                    </div>
+                    
+                </div>
+                <div class="Introduction-img">
+                    <img class="show" src="./images/icon/banner1_2.png" alt="">
+                    <img class="hide" src="./images/icon/banner2_2.png" alt="">
+                    <img class="hide" src="./images/icon/banner3_2.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="blank" style="width: 100vw; height: 15vh;"></div>
+        <div class="fashion-show ">
+            <div class="fashion-show-container hide down">
+                <button type="button" class="btn btn-secondary contact">Contact Us</button>
+                <video src="./videos/fashion.mp4" muted loop></video>
             </div>
         </div>
     </section>
@@ -105,4 +142,6 @@
 </body>
 <script src='./js/carousel.js'></script>
 <script src='./js/dynamic_opacity.js'></script>
+<script src="./js/Introduction.js"></script>
+
 </html>

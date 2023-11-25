@@ -1,17 +1,17 @@
 // 착장 사진 캐러셀
-var onModel_w = $('.onModel .item').width();
+var onModel_w = $('.onModel .slide-item').width();
 var onModel_curPic = 0;
-var onModel_maxPicnum = $('.onModel .item img').length;
+var onModel_maxPicnum = $('.onModel .slide-item img').length;
 
 // 옷 사진 캐러셀
-var cloth_w = $('.cloth .item').width();
-cloth_w += parseInt($('.cloth .item').css('margin-right')) * 2;
+var cloth_w = $('.cloth .slide-item').width();
+cloth_w += parseInt($('.cloth .slide-item').css('margin-right')) * 2;
 var cloth_curPic = 0;
-var cloth_maxPicnum = $('.cloth .item img').length - 2;
+var cloth_maxPicnum = $('.cloth .slide-item img').length - 2;
 
 let onModel_carousel = setInterval(() => {
-  onModel_curPic = infiniteCarousel('.onModel .container', onModel_curPic, onModel_maxPicnum, onModel_w);
-  cloth_curPic = infiniteCarousel('.cloth .container', cloth_curPic, cloth_maxPicnum, cloth_w)
+  onModel_curPic = infiniteCarousel('.onModel .slide-container', onModel_curPic, onModel_maxPicnum, onModel_w);
+  cloth_curPic = infiniteCarousel('.cloth .slide-container', cloth_curPic, cloth_maxPicnum, cloth_w)
 }, 2000);
 
 

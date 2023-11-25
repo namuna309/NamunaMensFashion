@@ -2,8 +2,8 @@ header {
     position: fixed;
     top: 0;
     z-index: 100;
-    height: 130px;
-    width: 100%;
+    height: 17vh;
+    width: 100vw;
     margin: 0px;
     padding: 0px;
     font-family: 'Nunito Sans';
@@ -16,7 +16,7 @@ div, ul, li, a, nav {
     margin: 0;
 }
 
-a {
+body a {
     text-decoration: none;
     color: inherit;
 }
