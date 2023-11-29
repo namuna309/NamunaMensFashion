@@ -1,26 +1,96 @@
+var email = "";
+var subject = "";
+var message = "";
+
 $('.contact').on('click', function() {
     $('.black-bg').addClass('show-modal')
 })
 $('#close').on('click', function() {
+    reset_modal();
     $('.black-bg').removeClass('show-modal')
 })
 
-// 이벤트 버블링
+// 검은색 배경 클릭시 모달창 닫음
 $('.black-bg').on('click', function(e) {
-    //e.target;               // 유저가 실제로 누른거
-    //console.log(e.target);
-    //e.currentTarget;        // 이벤트리스너 달린 곳 -> this
-    //e.preventDefault();     // 이벤트 기본동작 막아줌
-    //e.stopPropagation();    // 내 상위요소로 이벤트 버블링 막아줌
-    
-    // $('.black-bg').removeClass('show-modal')
-    
-    if(e.target == document.querySelector('.black.bg')) {
-        document.querySelector('.black-bg').remove('show-modal');
-    }
-
-    // jQuery
     if ($('.black-bg').is($(e.target))) {
+        reset_modal();
         $('.black-bg').removeClass('show-modal')
     }
 })
+
+$('#mail-address').blur(() => {
+    email = $.trim($('#mail-address').val());
+    test_email(email);
+})
+
+$('#mail-subject').blur(() => {
+    subject = $.trim($('#mail-subject').val());
+    console.log(subject);
+    test_subject(subject);
+})
+
+$('#mail-message').blur(() => {
+    message = $.trim($('#mail-message').val());
+    console.log(message);
+    test_message(message);
+})
+
+function reset_modal() {
+    if ($('#mail-address').hasClass('is-invalid')) {
+        $('#mail-address').removeClass('is-invalid');
+    }
+    if ($('#mail-subject').hasClass('is-invalid')) {
+        $('#mail-subject').removeClass('is-invalid');
+    }
+    if ($('#mail-message').hasClass('is-invalid')) {
+        $('#mail-message').removeClass('is-invalid');
+    }
+}
+
+function test_submit() {
+    email = $.trim($('#mail-address').val());
+    subject = $.trim($('#mail-subject').val());
+    message = $.trim($('#mail-message').val());
+
+
+    if(!test_email(email) && !test_subject(subject) && !test_message(message)) {
+        return false;
+    }
+    return true;
+}
+
+function test_email(email) {
+    if (/\S+@\S+\.\S+/.test(email) == false) {
+        $('#mail-address').addClass('is-invalid');
+        return false;
+    } else {
+        if ($('#mail-address').hasClass('is-invalid')) {
+            $('#mail-address').removeClass('is-invalid');
+        }
+        return true;
+    }
+}
+
+function test_subject(subject) {
+    if (subject.length < 1) {
+        $('#mail-subject').addClass('is-invalid');
+        return false;
+    } else {
+        if ($('#mail-subject').hasClass('is-invalid')) {
+            $('#mail-subject').removeClass('is-invalid');
+        }
+        return true;
+    }
+}
+
+function test_message(message) {
+    if (message.length < 1) {
+        $('#mail-message').addClass('is-invalid');
+        return false;
+    } else {
+        if ($('#mail-message').hasClass('is-invalid')) {
+            $('#mail-message').removeClass('is-invalid');
+        }
+        return true;
+    }
+}
