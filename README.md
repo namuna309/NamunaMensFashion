@@ -21,20 +21,28 @@
 - **옷만 있는 사진들이 돌아가는 캐러셀**(1번 캐러셀)과 **착장샷이 돌아가는 캐러셀**(2번 캐러셀)을 생성
 - 2번 캐러셀을 1번 캐러셀 상단에 두고 옷만 있는 사진이 중앙에 오면 착상샷이 보여지도록 연출
 
+  ![제목 없는 동영상 - Clipchamp로 제작 (12)](https://github.com/namuna309/NamunaMensFashion/assets/68600766/48318fda-cf02-45bd-bc82-b80b7cc0783d)
+
 ### 2. Scroll 위치에 따른 Opacity 동적 스타일 적용
 - 브랜드 로고와 슬로건은 fixed를 통해 위치를 고정하되 스크롤 위치에 따라 Opacity 스타일이 동적으로 적용시킴
 - 캐러셀이 85% 정도 보일 때 슬로건이 완전히 투명해져서 보이지 않게끔 함
+
+  ![제목 없는 동영상 - Clipchamp로 제작 (13)](https://github.com/namuna309/NamunaMensFashion/assets/68600766/0c3a9c28-cca2-427c-bfb5-e99cbd942b81)
 
 ### 3. Sticky를 활용한 텍스트 + 이미지 전환
 - 총 사진 3장, 3개 문구로 구성
 - 사진과 문구가 있는 box에 도달 시 사진과 문구는 지정된 위치에서 고정된 상태로 사진과 문구만 변경됨
 - 350vh의 박스를 3등분 한 후 350vh/3 만큼 스크롤 이동 시 사진과 문구 전환
 
+   ![제목 없는 동영상 - Clipchamp로 제작 (28)](https://github.com/namuna309/NamunaMensFashion/assets/68600766/a5178df0-db98-424b-99bb-6d2417c4443d)
+
 ### 4. 일정 스크롤 도달 시 비디오 등장 및 자동 재생
 - 이전 position: sticky가 적용된 Box를 90% 정도 통과 시 비디오를 등장시킴
 - opacity와 top 속성을 동적 적용하여 비디오가 구름이 떠오르듯 등장시킴
 - autorun 속성을 통해 비디오 박스 등장 시 자동 재생되게끔 함
 - bootstrap을 활용하여 <img src="https://img.shields.io/badge/Countact_us-212121?style=flat&l&logoColor=white"> 생성
+
+  ![제목 없는 동영상 - Clipchamp로 제작 (16)](https://github.com/namuna309/NamunaMensFashion/assets/68600766/eb802b5f-e5d3-4550-8280-28cb014bba91)
 
 ### 5. 모달창 생성
 - <img src="https://img.shields.io/badge/Countact_us-212121?style=flat&l&logoColor=white"> 클릭 시 메일 발송을 위한 modal창을 띄움
@@ -43,10 +51,17 @@
   - 이메일 발송을 위한 form 내 입력란과 버튼과 같은 기본적인 내용은 HTML과 CSS로 구현함
   - 입력란에 적용된 특수효과나 버튼 디자인은 Bootstrap을 활용함
 
+  ![모달창 오픈](https://github.com/namuna309/NamunaMensFashion/assets/68600766/7742275d-9a67-4864-8aed-bd436960aa14)
+
+
 ### 6. 이메일 발송 기능
 - 메일 발송 전 양식 및 빈칸 확인 기능 구현
 
   - 메일 주소 양식이 지켜지지 않거나 빈칸으로 된 입력란은 빨간색 테두리 적용
+
+    ![양식 확인](https://github.com/namuna309/NamunaMensFashion/assets/68600766/c50b81d3-edef-42df-a506-dbde1932d086)
+
+
 - 메일주소 양식 및 빈칸 유무 테스트 후 메일 발송
 
   - 테스트 탈락 시
@@ -54,10 +69,17 @@
     - 빈칸이 거나 메일주소 양식이 지켜지지 않은 경우 문제가 있는 입력란에 빨간색 테두리를 적용
     - 메일 발송 불가
 
+      ![메일전송 실패](https://github.com/namuna309/NamunaMensFashion/assets/68600766/6c113cd9-cb62-4427-a64f-2e1285c4b447)
+
+
   - 테스트 통과 시
     
     - 즉시 메일 발송
     - 발송된 메일은 지정된 계정 메일함에 보내지며 발송 주소, 제목, 내용, 발송 시간은 google spread sheet에 저장됨
+
+      ![제목 없는 동영상 - Clipchamp로 제작 (27)](https://github.com/namuna309/NamunaMensFashion/assets/68600766/61156b47-afe9-4a6b-8dc9-2febefd56068)
+
+
   
 <br>
 <br>
