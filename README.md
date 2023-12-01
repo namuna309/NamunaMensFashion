@@ -40,12 +40,12 @@
 - 이전 position: sticky가 적용된 Box를 90% 정도 통과 시 비디오를 등장시킴
 - opacity와 top 속성을 동적 적용하여 비디오가 구름이 떠오르듯 등장시킴
 - autorun 속성을 통해 비디오 박스 등장 시 자동 재생되게끔 함
-- bootstrap을 활용하여 <img src="https://img.shields.io/badge/Countact_us-212121?style=flat&l&logoColor=white"> 생성
+- bootstrap을 활용하여 <img src="https://img.shields.io/badge/Contact_Us-212121?style=flat&l&logoColor=white"> 생성
 
   ![제목 없는 동영상 - Clipchamp로 제작 (16)](https://github.com/namuna309/NamunaMensFashion/assets/68600766/eb802b5f-e5d3-4550-8280-28cb014bba91)
 
 ### 5. 모달창 생성
-- <img src="https://img.shields.io/badge/Countact_us-212121?style=flat&l&logoColor=white"> 클릭 시 메일 발송을 위한 modal창을 띄움
+- <img src="https://img.shields.io/badge/Contact_Us-212121?style=flat&l&logoColor=white"> 클릭 시 메일 발송을 위한 modal창을 띄움
 - 이메일 발송을 위한 Form 구성
 
   - 이메일 발송을 위한 form 내 입력란과 버튼과 같은 기본적인 내용은 HTML과 CSS로 구현함
