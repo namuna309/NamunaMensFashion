@@ -1,5 +1,10 @@
 import './App.css';
-import './CSS/header.css';
+import './css/header.css';
+import './css/section.css';
+
+// Components
+import Slogan from './components/slogan.js'
+import Carousel from './components/carousel.js';
 
 function App() {
   return (
@@ -11,6 +16,10 @@ function App() {
             </div>
         </div>
       </header>
+      <section>
+        <Slogan/>
+        <Carousel/>
+      </section>
     </div>
   );
 }
