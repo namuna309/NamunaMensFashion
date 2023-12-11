@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <Modal/>
-      {/* <Header/>
+      <Header/>
       <section>
         <Slogan/>
         <Carousel/>
@@ -25,7 +25,7 @@ function App() {
         <div className="blank" style={{width: "100%", height: "20vh"}}></div>
         <Contact/>
       </section>
-      <Footer/> */}
+      <Footer/>
     </div>
   );
 }
