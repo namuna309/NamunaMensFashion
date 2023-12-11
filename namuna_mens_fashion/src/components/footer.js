@@ -14,10 +14,10 @@ function Footer() {
                     </div>
                     <div>
                         <span>서울 강남구 언다리 111</span>
-                        <span className="bar">(주)MD 대표이사 오태식, 해바라기부문장 김태식</span>
+                        <span className="bar">(주)MD 대표이사 김아름, 해바라기부문장 남윤아</span>
                     </div>
                     <div>
-                        <span>COPYRIGHT © 2021 NAMUNA ALL RIGHTS RESERVED.</span>
+                        <span>COPYRIGHT © 2023 NAMUNA ALL RIGHTS RESERVED.</span>
                     </div>
                 </div>
                 <div className="customer_service">
