@@ -1,27 +1,28 @@
 import './App.css';
 import './css/header.css';
 import './css/section.css';
+import './css/footer.css';
 
 // Components
 import Slogan from './components/slogan.js'
 import Carousel from './components/carousel.js';
 import Introduction from './components/introduction.js';
+import Contact from './components/contact.js';
+import Footer from './components/footer.js';
+import Header from './components/header.js';
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <div className="header_inner background-font-color">
-            <div className="logo">
-                <div className="logo-img"></div>
-            </div>
-        </div>
-      </header>
+      <Header/>
       <section>
         <Slogan/>
         <Carousel/>
         <Introduction/>
+        <div className="blank" style={{width: "100%", height: "15vh"}}></div>
+        <Contact/>
       </section>
+      <Footer/>
     </div>
   );
 }
