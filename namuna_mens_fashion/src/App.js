@@ -2,6 +2,7 @@ import './App.css';
 import './css/header.css';
 import './css/section.css';
 import './css/footer.css';
+import './css/modal.css'
 
 // Components
 import Slogan from './components/slogan.js'
@@ -10,19 +11,21 @@ import Introduction from './components/introduction.js';
 import Contact from './components/contact.js';
 import Footer from './components/footer.js';
 import Header from './components/header.js';
+import Modal from './components/modal.js';
 
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Modal/>
+      {/* <Header/>
       <section>
         <Slogan/>
         <Carousel/>
         <Introduction/>
-        <div className="blank" style={{width: "100%", height: "15vh"}}></div>
+        <div className="blank" style={{width: "100%", height: "20vh"}}></div>
         <Contact/>
       </section>
-      <Footer/>
+      <Footer/> */}
     </div>
   );
 }
