@@ -10,8 +10,8 @@
 | 분야        | Stack  |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 언어 | <img src="https://img.shields.io/badge/html-F05132?style=flat&logo=html5&logoColor=white">  <img src="https://img.shields.io/badge/css-F05132?style=flat&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/Google_Apps_Script-4285F4?style=flat&logo=googleappsscript&logoColor=white"/>||
-| 라이브러리 | <img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/> |
-| 버전 관리 | <img src="https://img.shields.io/badge/git-F05032?style=fflat&logo=git&logoColor=black">  <img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/notion-000000?style=flat&logo=notion&logoColor=white"/> |
+| 라이브러리 | <img src="https://img.shields.io/badge/bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/> <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white"/> |
+| 버전 관리 | <img src="https://img.shields.io/badge/git-F05032?style=flat&logo=git&logoColor=white">  <img src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/notion-000000?style=flat&logo=notion&logoColor=white"/> |
 
 <br><br>
 
