@@ -5,6 +5,7 @@ import './css/section.css';
 // Components
 import Slogan from './components/slogan.js'
 import Carousel from './components/carousel.js';
+import Introduction from './components/introduction.js';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <section>
         <Slogan/>
         <Carousel/>
+        <Introduction/>
       </section>
     </div>
   );

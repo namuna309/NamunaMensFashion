@@ -6,7 +6,7 @@ var Introduction_height = $('.Introduction').height();
 var slogan_txt = [""]
 var picsNum = $('.Introduction-img img').length
 
-$(window).scroll(() => {
+$(window).on('scroll', () => {
     scroll_pos = $(window).scrollTop();
     if (scroll_pos >= carousel_pos && !$('.Introduction-container').hasClass('show')) {
         $('.Introduction-container').removeClass('hide');

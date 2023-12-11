@@ -126,4 +126,93 @@ section {
     width: 100%;
     z-index: 9;
   }
+
+  /* Introduction */
+.Introduction {
+  position: relative;
+  width: 100%;
+  height: 350vh;
+  z-index: 2;
+  margin-top: 20vh;
+}
+
+.Introduction-container {
+  position: sticky;
+  top: 30vh;
+  width: 100%;
+  height: 55vh;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.Introduction-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  align-items: center;
+}
+
+.Introduction-text {
+  position: absolute;
+  width: 500px;
+  height: 130px;
+  padding: 5px;
+  z-index: 3;
+  left: 5vw;
+  letter-spacing: .009em;
+}
+
+.text-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  font-size: 16px;
+  font-weight: 300;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Introduction-text .dark {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.Introduction-img {
+  position: absolute;
+  height: 100%;
+  width: 60%;
+  right: 1vw;
+  overflow: hidden;
+  background-color: black;
+}
+
+.Introduction-img img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  right: 0;
+}
+
+.hide {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.up {
+  top: 0px;
+  transition: all 0.5s ease-out;
+}
+
+.down {
+  top: 50px;
+  transition: all 0.5s ease-out;
+}
   

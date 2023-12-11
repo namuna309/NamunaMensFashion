@@ -29,7 +29,6 @@ function dynamic_opacity() {
         dh = cur_h - prev_h;
         let opacity = (-1 / (546.8 - 136.7)) * cur_h + (546.8 / (546.8 - 136.7));
         $('.slogan .opacity').css('opacity', opacity);
-        console.log(opacity);
     }) 
 }
 
