@@ -18,19 +18,19 @@ $('.black-bg').on('click', function(e) {
     }
 })
 
-$('#mail-address').blur(() => {
-    email = $.trim($('#mail-address').val());
+$('#mail-address').on('blur', () => {
+    email = $('#mail-address').val().trim();
     test_email(email);
 })
 
-$('#mail-subject').blur(() => {
-    subject = $.trim($('#mail-subject').val());
+$('#mail-subject').on('blur',() => {
+    subject = $('#mail-subject').val().trim();
     console.log(subject);
     test_subject(subject);
 })
 
-$('#mail-message').blur(() => {
-    message = $.trim($('#mail-message').val());
+$('#mail-message').on('blur',() => {
+    message = $('#mail-message').val().trim();
     console.log(message);
     test_message(message);
 })
