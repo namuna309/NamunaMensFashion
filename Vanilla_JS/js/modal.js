@@ -48,9 +48,9 @@ function reset_modal() {
 }
 
 function test_submit() {
-    email = $.trim($('#mail-address').val());
-    subject = $.trim($('#mail-subject').val());
-    message = $.trim($('#mail-message').val());
+    email = $('#mail-address').val().trim();
+    subject = $('#mail-subject').val().trim();
+    message = $('#mail-message').val().trim();
 
 
     if(!test_email(email) && !test_subject(subject) && !test_message(message)) {
