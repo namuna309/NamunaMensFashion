@@ -1,12 +1,12 @@
 // Images
-import onModel_img1 from '../img/carousel/onmodel1.jpg';
-import onModel_img2 from '../img/carousel/onmodel2.jpg';
-import onModel_img3 from '../img/carousel/onmodel3.jpg';
-import onModel_img4 from '../img/carousel/onmodel4.jpg';
-import cloth_img1 from '../img/carousel/cloth1.jpg';
-import cloth_img2 from '../img/carousel/cloth2.jpg';
-import cloth_img3 from '../img/carousel/cloth3.jpg';
-import cloth_img4 from '../img/carousel/cloth4.jpg';
+import onModel_img1 from '../../img/carousel/onmodel1.jpg';
+import onModel_img2 from '../../img/carousel/onmodel2.jpg';
+import onModel_img3 from '../../img/carousel/onmodel3.jpg';
+import onModel_img4 from '../../img/carousel/onmodel4.jpg';
+import cloth_img1 from '../../img/carousel/cloth1.jpg';
+import cloth_img2 from '../../img/carousel/cloth2.jpg';
+import cloth_img3 from '../../img/carousel/cloth3.jpg';
+import cloth_img4 from '../../img/carousel/cloth4.jpg';
 
 // Jquery
 import $ from 'jquery';

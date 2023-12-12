@@ -1,7 +1,7 @@
 // Images
-import intro1 from './../img/introduction/intro1.png';
-import intro2 from './../img/introduction/intro2.png';
-import intro3 from './../img/introduction/intro3.png';
+import intro1 from './../../img/introduction/intro1.png';
+import intro2 from './../../img/introduction/intro2.png';
+import intro3 from './../../img/introduction/intro3.png';
 // Jquery
 import $ from 'jquery';
 

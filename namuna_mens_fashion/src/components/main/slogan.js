@@ -1,4 +1,4 @@
-import slogan_img from '../img/icon/slogan.png';
+import slogan_img from './../../img/icon/slogan.png';
 import $ from 'jquery';
 
 function Slogan() {

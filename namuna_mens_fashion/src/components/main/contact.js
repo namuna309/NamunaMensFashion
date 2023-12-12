@@ -1,5 +1,5 @@
 // Video
-import vid from './../vid/fashion.mp4'
+import vid from './../../vid/fashion.mp4'
 
 // Jquery
 import $ from 'jquery';
