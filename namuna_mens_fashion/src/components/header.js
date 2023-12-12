@@ -1,3 +1,5 @@
+import './../css/header.css'
+
 function Header() {
     return (
         <header>
@@ -5,6 +7,9 @@ function Header() {
             <div className="logo">
                 <div className="logo-img"></div>
             </div>
+            <nav className='menu'>
+                <div className='collection'>collection</div>
+            </nav>
         </div>
       </header>
     )

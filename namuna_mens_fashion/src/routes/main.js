@@ -1,3 +1,6 @@
+// CSS
+import './../css/main.css'
+
 // Components
 import Slogan from '../components/main/slogan.js'
 import Carousel from '../components/main/carousel.js';

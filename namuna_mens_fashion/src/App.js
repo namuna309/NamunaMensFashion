@@ -1,5 +1,4 @@
 import './App.css';
-import './css/header.css';
 import './css/section.css';
 import './css/footer.css';
 import './css/modal.css'
