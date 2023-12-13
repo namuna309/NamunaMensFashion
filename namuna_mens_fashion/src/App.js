@@ -1,16 +1,21 @@
+// CSS
 import './App.css';
 import './css/section.css';
 import './css/footer.css';
-import './css/modal.css'
 
 // Components
 import Footer from './components/footer.js';
 import Header from './components/header.js';
 import Modal from './components/modal.js';
 
+// React Router Dom
+import { Routes, Route, Link } from 'react-router-dom';
+
 // Routes
 import Main from './routes/main.js';
-import Collection from './routes/collection.js';
+import Collections from './routes/collection.js';
+
+
 
 function App() {
   return (
@@ -18,7 +23,11 @@ function App() {
       <Modal/>
       <Header/>
       <section>
-        <Main/>
+        <Routes>
+          <Route path='/' element={<Main/>} />
+          <Route path='/collections' element={ <Collections/>} />
+          <Route path="*" element={<div>404 Error</div>} />
+        </Routes>
       </section>
       <Footer/>
     </div>

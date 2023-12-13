@@ -1,3 +1,5 @@
+import './../css/modal.css';
+
 // React
 import { useState, useEffect } from 'react';
 
@@ -20,54 +22,58 @@ function Modal() {
         })
 
         $('#close').on('click', function() {
-            reset_modal(email, subject, message);
             setModal('');
         });
-        
         
         // 검은색 배경 클릭시 모달창 닫음
         $('.modal').on('click', function(e) {
             if ($('.modal').is($(e.target))) {
-                reset_modal(email, subject, message);
                 setModal('');
             }
         });
 
-        if (modalDisp == 'show-modal') {
-            $('#mail-address').on('blur', () => {
-                setEmail($('#mail-address').val().trim());
-            });
-            $('#mail-subject').on('blur', () => {
-                setSubject($('#mail-subject').val().trim());
-            });
-            $('#mail-message').on('blur', () => {
-                setMessagee($('#mail-message').val().trim());
-            });
-            
-        } 
+        
+        return() => {
+            reset_modal();
+        }
+        
     }, [modalDisp]);
 
     useEffect(() => {
-        $('#send').on('click', function() {
-            if (submit) {
-                reset_modal();
-                setModal('');
-                setSubmit(false);
-            }
-        })
+        if (modalDisp == 'show-modal') {
+            $('#mail-address').on('blur', () => {
+                let address = $('#mail-address').val().trim();
+                test_email(address);
+                setEmail(address);
+            });
+            $('#mail-subject').on('blur', () => {
+                let subject = $('#mail-subject').val().trim();
+                test_subject(subject);
+                setSubject(subject);
+            });
+            $('#mail-message').on('blur', () => {
+                let message = $('#mail-message').val().trim();
+                test_message(message);
+                setMessagee(message);
+            });
+            
+        }
+        return () => {
+            $('#mail-address').off('blur');
+            $('#mail-subject').off('blur');
+            $('#mail-message').off('blur');   
+        }
+    }, [modalDisp, email, subject, message]);
+
+    useEffect(() => {
+        
+        if (submit) {
+            reset_modal();
+            setModal('');
+            setSubmit(false);
+        }
         console.log(submit);
     }, [submit]);
-
-
-    useEffect(() => {
-        test_email(email);
-    }, [email]);
-    useEffect(() => {
-        test_subject(subject);
-    }, [subject]);
-    useEffect(() => {
-        test_message(message);
-    }, [message]);
 
     
     function test_email(email) {
@@ -92,6 +98,7 @@ function Modal() {
             }
             return true;
         }
+        
     }
 
     function test_message(message) {
@@ -99,7 +106,7 @@ function Modal() {
             setMValid('is-invalid');
             return false;
         } else {
-            if (subjectValid == 'is-invalid') {
+            if (messageValid == 'is-invalid') {
                 setMValid('');
             }
             return true;
@@ -110,7 +117,7 @@ function Modal() {
         if (is_initial(email, subject, message)) {
             e.preventDefault();
         }
-        if(!test_email(email) || !test_subject(subject) || !test_message(message)) {
+        else if(!test_email(email) || !test_subject(subject) || !test_message(message)) {
             e.preventDefault();
         }
         else {
