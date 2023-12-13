@@ -9,12 +9,11 @@ import Header from './components/header.js';
 import Modal from './components/modal.js';
 
 // React Router Dom
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, useMatch, useLocation } from 'react-router-dom';
 
 // Routes
 import Main from './routes/main.js';
-import Collections from './routes/collection.js';
-
+import Collections from './routes/collections.js';
 
 
 function App() {

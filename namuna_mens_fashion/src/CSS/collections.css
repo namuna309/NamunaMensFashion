@@ -1,0 +1,9 @@
+.collections {
+    width: 100%;
+}
+
+.collcetions-containter {
+    width: 100%;
+    height: 400vh;
+    background-color: blue;
+}

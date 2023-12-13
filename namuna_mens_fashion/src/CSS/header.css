@@ -1,7 +1,7 @@
 header {
-    position: fixed;
+    /* position: fixed;
     top: 0;
-    z-index: 20;
+    z-index: 20; */
     height: 17vh;
     width: 100%;
     margin: 0px;
@@ -11,15 +11,7 @@ header {
     background-color: white;
 }
 
-div, ul, li, a, nav {
-    box-sizing: border-box;
-    margin: 0;
-}
 
-body a {
-    text-decoration: none;
-    color: inherit;
-}
 
 .background-font-color {
     color: black;
