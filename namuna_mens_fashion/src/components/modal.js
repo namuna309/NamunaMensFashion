@@ -153,7 +153,7 @@ function Modal() {
                 <div className="white-bg">
                     <div className="form-container">
                         <h2>Contact Us</h2>
-                        <form className="gform" method="POST" onSubmit={(e) => test_submit(e, email, subject, message)} action="https://script.google.com/macros/s/AKfycbwXarJaqeQQmggDHDaY-BWR1muP5m03xfaSnXbgqalh5q8EJXtiCPqBChxPFH_7ZLvS/exec" target='blankifr'>
+                        <form className="gform" method="POST" onSubmit={(e) => test_submit(e, email, subject, message)} action="http://localhost:8080/mail" target='blankifr'>
                             <div className="mb-3">
                                 <input type="text" className={`form-control ${emailValid}`} id="mail-address" name="email"
                                     placeholder="Email Address - name@example.com"/>

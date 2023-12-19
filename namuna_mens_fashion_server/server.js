@@ -1,27 +1,82 @@
 const express = require('express');
+const { MongoClient } = require('mongodb')
 const cors = require("cors");
 const app = express();
+const nodemailer = require('nodemailer');
 require('dotenv').config();
 const mongodb_pw = process.env.MONGODB_PW;
-app.use(cors());
+const mailing_address =
 
+  // settings
+  app.use(cors());
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+// 서버 listen 확인
 app.listen(8080, () => {
-    console.log('http://localhost:8080 에서 서버 실행중')
+  console.log('http://localhost:8080 에서 서버 실행중')
 })
 
-const { MongoClient } = require('mongodb')
 
+// Mongo DB 연결 확인
 let db
 const url = `mongodb+srv://nyah309:${mongodb_pw}@cluster0.emzshpb.mongodb.net/?retryWrites=true&w=majority`;
-new MongoClient(url).connect().then((client)=>{
+new MongoClient(url).connect().then((client) => {
   console.log('DB연결성공')
   db = client.db('NamunaDB')
-}).catch((err)=>{
+}).catch((err) => {
   console.log(err)
 })
 
+// DB로부터 collections 이미지 path 요청 및 client로 전송
 app.get('/collections', async (req, res) => {
   let q = req.query
-  let result = await db.collection('collections').find({'season': q.season}).toArray();
+  let result = await db.collection('collections').find({ 'season': q.season }).toArray();
   res.send(result);
+})
+
+// 서버에서 mail 발송
+app.post('/mail', (req, res) => {
+  let email = req.body.email;
+  let subject = req.body.subject;
+  let message = req.body.message
+
+  // 메일 검증
+  if (!email || /\S+@\S+\.\S+/.test(email)) {
+    res.send('MAIL_ADDRESS_KEY_ERROR');
+  } else if (!subject) {
+    res.send('SUBJECT_KEY_ERROR');
+  } else if (!message) {
+    res.send('MESSAGE_KEY_ERROR');
+  }
+
+  let text = `message\n${message}\n\nfrom: ${email}`;
+    `<p>${message}</p>
+    <br/>
+    <p><span style='font-weight: bold'>from: </span>${email}</p>`;
+
+  // 메일 발송 관련 인증
+  let transporter = nodemailer.createTransport({
+    service: process.env.MAIL_SERVICE,
+    auth: {
+      user: process.env.MAIL_AUTH_ADDRESS, // Gmail 주소
+      pass: process.env.MAIL_AUTH_PW // Gmail 비밀번호 or 앱 비밀번호
+    }
+  });
+
+  // 메일 발송 관련 옵션
+  let mailOptions = {
+    to: process.env.MAIL_TO_ADDRESS,
+    subject: subject,
+    text: text
+  };
+
+  // 메일 발송
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) {
+      res.send(err);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  });
 })
