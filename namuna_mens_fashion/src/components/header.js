@@ -23,7 +23,8 @@ function Header() {
                     <Link className="logo-img" to={'./'} onClick={() => setCss(mainCss)}></Link>
                 </div>
                 <div className='menu'>
-                    <Link className='collection' to={'./collections'} onClick={() => setCss(othersCss)}>collection</Link>
+                    <Link className='collection' to={'./collections'} onClick={() => setCss(othersCss)}>Collection</Link>
+                    <Link className='qna' to={'./qnas'} onClick={() => setCss(othersCss)}>Q&A</Link>
                 </div>
             </div>
         </header>

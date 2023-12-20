@@ -5,10 +5,9 @@ const app = express();
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 const mongodb_pw = process.env.MONGODB_PW;
-const mailing_address =
 
-  // settings
-  app.use(cors());
+ // settings
+app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
@@ -30,6 +29,7 @@ new MongoClient(url).connect().then((client) => {
 
 // DB로부터 collections 이미지 path 요청 및 client로 전송
 app.get('/collections', async (req, res) => {
+  res.redirect('/collections/2023SS');
   let q = req.query
   let result = await db.collection('collections').find({ 'season': q.season }).toArray();
   res.send(result);
@@ -51,7 +51,7 @@ app.post('/mail', (req, res) => {
   }
 
   let text = `message\n${message}\n\nfrom: ${email}`;
-    `<p>${message}</p>
+  `<p>${message}</p>
     <br/>
     <p><span style='font-weight: bold'>from: </span>${email}</p>`;
 
@@ -80,3 +80,5 @@ app.post('/mail', (req, res) => {
     }
   });
 })
+
+

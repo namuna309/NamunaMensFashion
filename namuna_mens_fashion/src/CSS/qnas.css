@@ -1,0 +1,61 @@
+.qnas {
+    width: 100%;
+    padding: 10px 2vw 0;
+    margin-bottom: 50px;
+}
+
+.qnas-banner {
+    width: 100%;
+    height: 400px;
+    margin: 25px 0 30px;
+    padding: 0 3vw 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    
+}
+
+.qnas-banner img {
+    width: 100%;
+}
+
+.qnas-title {
+    height: 50px;
+    margin: 30px 3vw 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.qnas-title div {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 1.25px black;
+    border-bottom: solid 1.25px black;
+}
+
+.qnas-title p {
+    font-size: 25px;
+    margin: 0;
+    font-weight: 650;
+}
+
+.qnas-containter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 30px 7vw 30px;
+}
+
+
+table th, table td {
+    height: 50px;
+    font-size: 17px;
+    text-align: center;
+    vertical-align:middle;
+    padding: 16px 5px;
+}

@@ -7,6 +7,7 @@ import './css/footer.css';
 import Footer from './components/footer.js';
 import Header from './components/header.js';
 import Modal from './components/modal.js';
+import QnAs from './routes/qnas.js';
 
 // React Router Dom
 import { Routes, Route, useMatch, useLocation } from 'react-router-dom';
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main/>} />
           <Route path='/collections' element={ <Collections/>} />
+          <Route path='/qnas' element={ <QnAs/>} />
           <Route path="*" element={<div>404 Error</div>} />
         </Routes>
       </section>
