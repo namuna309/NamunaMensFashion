@@ -52,10 +52,15 @@
 }
 
 
+
 table th, table td {
     height: 50px;
     font-size: 17px;
     text-align: center;
     vertical-align:middle;
     padding: 16px 5px;
+}
+
+.questionDetail-table {
+    margin: 0 150px 0
 }

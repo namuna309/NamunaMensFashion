@@ -4,9 +4,15 @@ import './../css/qnas.css';
 // Table
 import Table from 'react-bootstrap/Table';
 
-function QuestionList() {
-    return (
-      <Table className='table-bordered table-hover'>
+// Lirbrary
+import { Link } from 'react-router-dom';
+
+
+function QuestionList(props) {
+  let questions = props.questionList;
+  
+  return ( 
+    <Table className='table-bordered table-hover'>
         <colgroup>
         {/* 번호 */}
         <col style={{width: '10%'}}/>
@@ -29,30 +35,23 @@ function QuestionList() {
           </tr>
         </thead>
         <tbody className='table-group-divider'>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>11</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>11</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@twitter</td>
-            <td>11</td>
-          </tr>
+          {
+            questions == null ? null :
+            questions.map((question, idx) => {
+              return (
+                  <tr>
+                    <td>{idx + 1}</td>
+                    <td><Link className='quetion' to={`./${question._id}`}>{question.title}</Link></td>
+                    <td>{question.author}</td>
+                    <td>{question.date}</td>
+                    <td>{question.views}</td>
+                  </tr>
+              )
+            })
+          }
         </tbody>
       </Table>
-    );
+  )
   }
 
   export default QuestionList

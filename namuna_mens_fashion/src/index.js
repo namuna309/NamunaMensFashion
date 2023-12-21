@@ -7,11 +7,17 @@ import reportWebVitals from './reportWebVitals';
 // React Router Dom
 import { BrowserRouter } from "react-router-dom";
 
+// React Query
+import { QueryClient, QueryClientProvider } from "react-query"
+const queryClient = new QueryClient()
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </QueryClientProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

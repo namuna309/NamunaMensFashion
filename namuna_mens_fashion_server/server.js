@@ -1,10 +1,11 @@
 const express = require('express');
-const { MongoClient } = require('mongodb')
+const { MongoClient, ObjectId } = require('mongodb')
 const cors = require("cors");
 const app = express();
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 const mongodb_pw = process.env.MONGODB_PW;
+const port = process.env.PORT;
 
  // settings
 app.use(cors());
@@ -12,8 +13,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // 서버 listen 확인
-app.listen(8080, () => {
-  console.log('http://localhost:8080 에서 서버 실행중')
+app.listen(port, () => {
+  console.log(`http://localhost:${port} 에서 서버 실행중`)
 })
 
 
@@ -29,7 +30,6 @@ new MongoClient(url).connect().then((client) => {
 
 // DB로부터 collections 이미지 path 요청 및 client로 전송
 app.get('/collections', async (req, res) => {
-  res.redirect('/collections/2023SS');
   let q = req.query
   let result = await db.collection('collections').find({ 'season': q.season }).toArray();
   res.send(result);
@@ -82,3 +82,24 @@ app.post('/mail', (req, res) => {
 })
 
 
+app.get('/qnas', async (req, res) => {
+  let questions = await db.collection('questions').find().toArray();
+  res.send(questions);
+})
+
+app.get('/qnas/:qid', async (req, res) => {
+  try {
+    let objId = req.params.qid;
+    let question = await db.collection('questions').findOne({_id: new ObjectId(objId)});
+    if (question == null) { 
+      res.status(400).send('그런 글 없음')
+    } else {
+      console.log(question);
+      res.send(question);
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(400).send('이상한 url 입력함');
+  }
+  
+})

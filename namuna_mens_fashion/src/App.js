@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main/>} />
           <Route path='/collections' element={ <Collections/>} />
-          <Route path='/qnas' element={ <QnAs/>} />
+          <Route path='/qnas/*' element={ <QnAs/>} />
           <Route path="*" element={<div>404 Error</div>} />
         </Routes>
       </section>

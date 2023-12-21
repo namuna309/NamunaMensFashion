@@ -19,7 +19,7 @@ function Collections() {
 
     useEffect(() => {
         let img_paths = new Array();
-        axios.get(`http://localhost:8080/collections?season=${sortedSeason}`)
+        axios.get(`http://localhost:8081/collections?season=${sortedSeason}`)
             .then((data) => {
                 img_paths = data.data[0].dir;
                 setSrc(img_paths.map(img => {return images_all(img)}));
