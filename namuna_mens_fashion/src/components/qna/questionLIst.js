@@ -1,6 +1,3 @@
-// CSS
-import './../css/qnas.css';
-
 // Table
 import Table from 'react-bootstrap/Table';
 
@@ -12,6 +9,7 @@ function QuestionList(props) {
   let questions = props.questionList;
   
   return ( 
+    <>
     <Table className='table-bordered table-hover'>
         <colgroup>
         {/* 번호 */}
@@ -51,6 +49,9 @@ function QuestionList(props) {
           }
         </tbody>
       </Table>
+      <div style={{width: "100%", height: "15px"}}></div>
+      <Link className="post-btn" to="./write"><button type="button" class="btn btn-dark">문의하기</button></Link>
+      </>
   )
   }
 
