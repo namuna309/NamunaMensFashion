@@ -11,12 +11,10 @@ function QuestionDetail() {
     let { qid } = useParams();
     let question = useQuery(['question'], async () => {
         let qData = await axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas/${qid}`)
-            .then((q) => { console.log(q.data); return q.data; });
-        console.log(qData);
+            .then((q) => { return q.data; });
         return qData;
     })
 
-    console.log(question.data);
     return (
         <Routes>
             <Route path='/' element={question.isLoading ? null : <QeustionTable question={question.data} />}/>
@@ -70,12 +68,18 @@ function QeustionTable(props) {
             <div className='ctr-btn-container'>
             <div className='ctr-btn-box'>
             <div class="col-12">
-                <Link className="question-modifying" to="./modify"><button class="btn btn-dark">수정</button></Link>
+                <Link className="question-modifying" to="./modify"><button className="btn btn-dark">수정</button></Link>
             </div>
-            <div class="col-12">
-                <Link className='question-deletion' to="./../"><button class="btn btn-dark" onClick={() => {
-                    axios.delete(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas/delete?id=${question._id}`).catch((err) => console.log(err));
-                }}>삭제</button></Link>
+            <div className="col-12">
+                <button className="btn btn-dark" type='submit' onClick={() => {
+                    axios.post(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas/delete`, {
+                        _id : question._id
+                    })
+                    .then((data) => {
+                        console.log(data);
+                        window.location = 'http://localhost:3000/qnas';
+                    }).catch((err) => console.log(err));
+                }}>삭제</button>
             </div>
             </div>
             </div>

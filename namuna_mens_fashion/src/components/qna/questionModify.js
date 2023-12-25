@@ -130,8 +130,8 @@ function QeustionModify(props) {
                 </tr>
             </Table>
             <div style={{width: "100%", height: "15px"}}></div>
-            <div class="col-12">
-            <button class="btn btn-dark" type="submit">수정</button>
+            <div className="col-12">
+            <button className="btn btn-dark" type="submit">수정</button>
             </div>
         </form>
     )

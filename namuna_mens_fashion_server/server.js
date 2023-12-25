@@ -107,7 +107,6 @@ app.get('/qnas/:qid', async (req, res) => {
 app.post('/qnas/write', async (req, res) => {
   let post = req.body;
   
-
   if (post.title == '' || post.author == '' || post.content == '') {
     res.status(400).send('빈 내용이 있습니다.');
   } else {
@@ -120,7 +119,7 @@ app.post('/qnas/write', async (req, res) => {
       let result = await db.collection('questions').find().toArray();
       console.log(result);
       console.log('입력 성공');
-      res.redirect('http://localhost:3000/qnas');
+      res.redirect(`${process.env.CLIENT_URL}/qnas`);
     } catch(e) {
       console.log('db 입력 실패');
       res.status(400).send(e);
@@ -128,17 +127,16 @@ app.post('/qnas/write', async (req, res) => {
   }
 })
 
-app.delete('/qnas/delete', async (req, res) => {
+app.post('/qnas/delete', async (req, res) => {
   try {
-    let qid = req.query.id;
+    let qid = req.body._id
     console.log(qid);
     let result = await db.collection('questions').deleteOne({ "_id" : new ObjectId(qid) });
     console.log(result);
+    res.send(result);
   } catch (err) {
     console.log('db 입력 실패');
     res.status(400).send(err);
   }
-  
-
 
 })

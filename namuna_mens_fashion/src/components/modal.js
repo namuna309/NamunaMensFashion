@@ -72,7 +72,6 @@ function Modal() {
             setModal('');
             setSubmit(false);
         }
-        console.log(submit);
     }, [submit]);
 
     

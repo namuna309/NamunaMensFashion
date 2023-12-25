@@ -42,11 +42,9 @@ function QeustionWrite() {
     }, [title, author, content]);
 
     useEffect(() => {
-        
         if (submit) {
             setSubmit(false);
         }
-        console.log(submit);
     }, [submit]);
 
     function test_title(title) {
@@ -129,8 +127,8 @@ function QeustionWrite() {
                 </tr>
             </Table>
             <div style={{width: "100%", height: "15px"}}></div>
-            <div class="col-12">
-            <button class="btn btn-dark" type="submit">등록</button>
+            <div className="col-12">
+            <button className="btn btn-dark" type="submit">등록</button>
             </div>
         </form>
     )

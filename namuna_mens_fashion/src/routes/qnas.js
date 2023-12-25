@@ -20,7 +20,7 @@ function QnAs() {
 
     let questionList = useQuery(['question-list'], async () => {
         let qList = await axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas`)
-            .then((qs) => {console.log(qs.data);return qs.data;});
+            .then((qs) => {return qs.data;});
         return qList;
     })
 

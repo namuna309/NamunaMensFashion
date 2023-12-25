@@ -50,7 +50,7 @@ function QuestionList(props) {
         </tbody>
       </Table>
       <div style={{width: "100%", height: "15px"}}></div>
-      <Link className="post-btn" to="./write"><button type="button" class="btn btn-dark">문의하기</button></Link>
+      <Link className="post-btn" to="./write"><button type="button" className="btn btn-dark">문의하기</button></Link>
       </>
   )
   }
