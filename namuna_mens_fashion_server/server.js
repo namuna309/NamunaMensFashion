@@ -123,8 +123,22 @@ app.post('/qnas/write', async (req, res) => {
       res.redirect('http://localhost:3000/qnas');
     } catch(e) {
       console.log('db 입력 실패');
-      res.status(500).send(e);
+      res.status(400).send(e);
     }
-   
   }
+})
+
+app.delete('/qnas/delete', async (req, res) => {
+  try {
+    let qid = req.query.id;
+    console.log(qid);
+    let result = await db.collection('questions').deleteOne({ "_id" : new ObjectId(qid) });
+    console.log(result);
+  } catch (err) {
+    console.log('db 입력 실패');
+    res.status(400).send(err);
+  }
+  
+
+
 })

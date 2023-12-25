@@ -19,7 +19,7 @@ import QeustionWrite from '../components/qna/questionWrite';
 function QnAs() {
 
     let questionList = useQuery(['question-list'], async () => {
-        let qList = await axios.get('http://localhost:8081/qnas')
+        let qList = await axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas`)
             .then((qs) => {console.log(qs.data);return qs.data;});
         return qList;
     })
@@ -35,7 +35,7 @@ function QnAs() {
             <div className='qnas-containter'>
                 <Routes>
                     <Route path='/' element={questionList.isLoading ? null : <><QuestionList questionList={questionList.data}/></>} />
-                    <Route path=':qid' element={<QuestionDetail/>} />
+                    <Route path=':qid/*' element={<QuestionDetail/>} />
                     <Route path='write' element={<QeustionWrite/>}/>
                 </Routes>
                 

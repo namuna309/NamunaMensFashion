@@ -69,6 +69,21 @@ table th, table td {
     margin: 0 150px 0
 }
 
+.ctr-btn-container {
+    width: 100%;
+}
+
+.ctr-btn-box {
+    float: right;
+    display: flex;
+    flex-direction: row;
+}
+
+.col-12 {
+    width: auto;
+    margin: 5px;
+}
+
 .qnas-write-form {
     width: 100%;
 }
