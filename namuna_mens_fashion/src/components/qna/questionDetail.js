@@ -1,24 +1,27 @@
 // Library
 import { useParams, Routes, Route, Link } from 'react-router-dom';
-import { useQuery } from 'react-query';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 
 // Component
 import QeustionModify from './questionModify';
+import { useEffect, useState } from 'react';
 
 function QuestionDetail() {
     let { qid } = useParams();
-    let question = useQuery(['question'], async () => {
-        let qData = await axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas/${qid}`)
-            .then((q) => { return q.data; });
-        return qData;
-    })
+
+    let [question, setQuestion] = useState();
+
+    useEffect(() => {
+
+        axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas/detail/${qid}`)
+            .then((q) => { setQuestion(q.data) }).catch((err) => console.log(err));
+    }, []);
 
     return (
         <Routes>
-            <Route path='/' element={question.isLoading ? null : <QeustionTable question={question.data} />}/>
-            <Route path='/modify' element={<QeustionModify question={question.data}/>}/>
+            <Route path='/' element={question == null ? null : <QeustionTable question={question} />} />
+            <Route path='/modify' element={<QeustionModify question={question} />} />
         </Routes>
     )
 }
@@ -66,24 +69,24 @@ function QeustionTable(props) {
             </Table>
             <div style={{ width: "100%", height: "15px" }}></div>
             <div className='ctr-btn-container'>
-            <div className='ctr-btn-box'>
-            <div class="col-12">
-                <Link className="question-modifying" to="./modify"><button className="btn btn-dark">수정</button></Link>
+                <div className='ctr-btn-box'>
+                    <div class="col-12">
+                        <Link className="question-modifying" to="./modify"><button className="btn btn-dark">수정</button></Link>
+                    </div>
+                    <div className="col-12">
+                        <button className="btn btn-dark" type='submit' onClick={() => {
+                            axios.post(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas/delete`, {
+                                _id: question._id
+                            })
+                                .then((data) => {
+                                    console.log(data);
+                                    window.location = 'http://localhost:3000/qnas';
+                                }).catch((err) => console.log(err));
+                        }}>삭제</button>
+                    </div>
+                </div>
             </div>
-            <div className="col-12">
-                <button className="btn btn-dark" type='submit' onClick={() => {
-                    axios.post(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas/delete`, {
-                        _id : question._id
-                    })
-                    .then((data) => {
-                        console.log(data);
-                        window.location = 'http://localhost:3000/qnas';
-                    }).catch((err) => console.log(err));
-                }}>삭제</button>
-            </div>
-            </div>
-            </div>
-            
+
         </>
     )
 

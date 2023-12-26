@@ -5,10 +5,8 @@ import './../css/qnas.css';
 import banner from './../img/banner/collectionsBanner2_1.png'
 
 // Library
-import axios from 'axios';
-import { useState, useEffect } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import { useQuery } from 'react-query';
+import { useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation  } from 'react-router-dom';
 
 // Component
 import QuestionList from '../components/qna/questionLIst';
@@ -17,12 +15,15 @@ import QeustionWrite from '../components/qna/questionWrite';
 
 
 function QnAs() {
+    let navigate = useNavigate();
+    let location = useLocation();
 
-    let questionList = useQuery(['question-list'], async () => {
-        let qList = await axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/qnas`)
-            .then((qs) => {return qs.data;});
-        return qList;
-    })
+    useEffect(() => {
+        let curPath = location.pathname;
+        if(curPath == '/qnas' || curPath == '/qnas/') {
+            navigate('./1');
+        }
+      }, [location]);
 
     return (
         <div className="qnas">
@@ -34,8 +35,8 @@ function QnAs() {
             <div style={{ width: "100%", height: "1px" }}></div>
             <div className='qnas-containter'>
                 <Routes>
-                    <Route path='/' element={questionList.isLoading ? null : <><QuestionList questionList={questionList.data}/></>} />
-                    <Route path=':qid/*' element={<QuestionDetail/>} />
+                    <Route path=':curPage' element={<QuestionList/>} />
+                    <Route path='detail/:qid/*' element={<QuestionDetail/>} />
                     <Route path='write' element={<QeustionWrite/>}/>
                 </Routes>
                 

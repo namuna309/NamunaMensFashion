@@ -81,21 +81,28 @@ app.post('/mail', (req, res) => {
   });
 })
 
-
-app.get('/qnas', async (req, res) => {
-  let questions = await db.collection('questions').find().toArray();
-  res.send(questions);
+app.get('/qnas/lists', async (req, res) => {
+  let total = await db.collection('questions').countDocuments({});
+  res.send(`${total}`);
 })
 
-app.get('/qnas/:qid', async (req, res) => {
+app.get('/qnas/:pageNum/list', async (req, res) => {
+  let pageNum = req.params.pageNum;
+  
+  let questions = await db.collection('questions').find().sort({questionId: -1}).skip((pageNum - 1) * 5).limit(5).toArray();
+  
+  res.send(questions)
+})
+
+app.get('/qnas/detail/:qid', async (req, res) => {
   try {
     let objId = req.params.qid;
     let question = await db.collection('questions').findOne({_id: new ObjectId(objId)});
     if (question == null) { 
-      res.status(400).send('그런 글 없음')
+      res.status(400).send('그런 글 없음');
     } else {
       console.log(question);
-      res.send(question);
+      res.send(question); 
     }
   } catch (err) {
     console.log(err);
@@ -116,11 +123,11 @@ app.post('/qnas/write', async (req, res) => {
       post['views'] = '0';
       
       await db.collection('questions').insertOne(post);
-      let result = await db.collection('questions').find().toArray();
-      console.log(result);
+      await db.collection('questions').find().toArray();
       console.log('입력 성공');
-      res.redirect(`${process.env.CLIENT_URL}/qnas`);
+      setTimeout(() => res.redirect(`${process.env.CLIENT_URL}/qnas/1`), 1000);
     } catch(e) {
+      console.log(e);
       console.log('db 입력 실패');
       res.status(400).send(e);
     }
@@ -135,6 +142,7 @@ app.post('/qnas/delete', async (req, res) => {
     console.log(result);
     res.send(result);
   } catch (err) {
+    console.log(err);
     console.log('db 입력 실패');
     res.status(400).send(err);
   }
